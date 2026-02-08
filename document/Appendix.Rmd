@@ -1,0 +1,382 @@
+---
+title: "Appendix: HRAF Ethnographic Sources"
+author: "Compiled by **xx**"
+date: "`r Sys.Date()`"
+fontsize: 11pt
+output: 
+  bookdown::pdf_document2:
+    toc: true
+    toc_depth: 3
+header-includes:
+   - \usepackage{textcomp}
+   - \usepackage{utopia}
+   - \usepackage{lineno}
+   - \usepackage{float}
+   - \floatplacement{figure}{H}
+   - \usepackage{caption}
+   - \captionsetup[figure]{font=scriptsize}
+   - \captionsetup[table]{font=scriptsize}
+linestretch: 1.5
+link-citations: yes
+linkcolor: blue
+bibliography: bibliography.bib
+csl: apa.csl
+---
+
+\newpage
+
+# Africa
+
+# Central Africa
+
+## Azande
+Larken, P. M. 1926. “An Account of the Zande.” In Sudan Notes and Records, Vol. 9. 1926, Khartoum. [S.n.].
+
+p.32a
+
+“Nails of the hands are pared with a knife, and their surfaces sometimes scraped. Among the Vungara excessively long ones are occasionally seen, especially that of the little finger. Toe nails are not attended to.”
+
+p.33-34
+
+Cut hair is concealed usually, though by no means invariably, on account of the danger from magic, as are nail parings. But it is more important to conceal hair, as a shaved head being a sign of mourning, if it is left lying about, a death in the family may follow. Such a death may also occur if it is burnt. Therefore, it is advisable to conceal it.
+
+## Barundi
+
+Meyer, Hans, and Helmut Handzik. 1916. The Barundi: An Ethnological Study of German East Africa. 1916, Leipzig. Ott Spamer. p.12.
+
+Most Batussi have sinewy limbs and a firm musculature, but no thick muscular flesh on the arms and legs. Calves are usually entirely lacking. Hands and feet are conspicuously graceful and finely jointed; by our standards they all have narrow ladies' hands with a glove size of 5 or 6 and long fingers, while their feet are narrow and small too, but with short toes. The wrist is so thin that even men can easily insert it into the slit (2 1/2 to 3 1/2 centimeters wide) in the wooden discs with which they protect their left hand against the recoiling bowstring (see pp. 34482). No adult European is able to do this. Their copper or iron ornamental rings, worn on the right wrist, are all so narrow that they seem to be made for children. Aristocrats let the nail on the little finger grow to a length of 1 1/2 to 2 1/2 centimeters as a mark of their nobility and their freedom from manual labor.
+
+## Mongo
+
+Hulstaert, Gustave E., and Monika B. Vizedom. 1938. “Marriage among the Nkundu.” In MéIn-8, vol. 8. 1938, Bruxelles. Librairie Falk fils, Georges Van Campenhout, Successeur. p.458.
+
+A. A meal. Early in the morning of the day set, the husband goes and cuts a bunch of fruit of the palm tree, and the helper goes and picks manioc leaves (nowadays leaves and fruit collected the day before are sometimes used). The helper crushes all of this to make a dish of food. While she cooks it over the fire, she shaves a little hair off the mother, plucks out one eyebrow, and cuts one of her nails. Then she does the same to the child. The helper moves away, and the father comes in. His wife subjects him to the same treatment, and he reciprocates, doing the same to the child. The rubbish is simply thrown away without any ceremony. This practice has no special name; the Nkundó say: báyaténa b□k□ng□, báyak□nga, “They shave each other's heads.”
+
+## Eastern Africa
+
+### Gikuyu
+
+Kenyatta, J. (1953). Facing Mount Kenya: the tribal life of the Gikuyu. Secker and Warburg. p.102-103.
+
+"**Care is taken to teach the boy how to be a good observer and to reckon things by observation without counting them, as counting, especially of sheep, goats, cattle or people, is considered as one of the Gikuyu taboos, mogiro, and one which would bring ill-luck to the people or animals counted. For example, a man with a hundred head of cattle, sheep and goats trains his son to know them by their colour only or by their size and type of horns, while every one of them has a special name**.
+
+To test the boy's power of observation and memory, two or three herds from different homesteads are mixed, and the boy is asked to separate them by picking out all that belong to his herd. Sometimes some of the sheep and goats are hidden, and when the flock comes to rest at midday the boy is given a few minutes in which to inspect gothorima and report. His report is very carefully noted by those in charge of the boy's training. If he makes any mistake no harsh remark is made, but quietly he is asked to go through again and point out such-and-such a sheep or goat which has been purposely hidden. By going through the inspection again he would at once notice his mistake. The elder in charge of the herd would ask the boy to trace back in his memory and explain at what time and place he last saw the missing sheep or goat. In this way the weak point in the memory training is noticed and corrected. In the case of a hunter this training is far more intense, because the intricacy of forest paths and the difficulty of tracing animals demand the greatest power of observation. During my boyhood my special task in the family was to look after our cattle, sheep and goats; therefore I had to go through this training, and afterwards taught my brothers."
+
+### Hadza
+
+Bagshawe, F. J. (1925). The peoples of the Happy Valley (East Africa): the  aboriginal races of Kondoa Irangi: part II -- the Kangeju. Journal of the African Society, Vol. 24(94), 117–130. p.127.
+
+"The Kangeju speak a “click “ language entirely different from that of the Sandawi (which also possesses clicks). According to my diary, my first impression was that “it consists entirely of clicks and whining sounds, so that in their ordinary conversation they always seem to be disagreeing.” Being no philologist, I am perhaps rash in my statement that the Kangeju and Sandawi languages differ entirely, but, at all events, members of the two tribes confronted fail to understand each other in the least. The Kangeju themselves object to any outsiders understanding their language and deliberately obstruct attempts to do so. It is obvious, however, that theirs is a very primitive form of speech with an extremely limited vocabulary. **They do not appear to be able to count more than five : articles more numerous become, confusedly, “many.” As one old man expressed it, “We have no cattle: why should we want to count?”** Not long ago I tried to write down a few words and sentences but, I regret to say, I gave it up when I found that my “informant” was wilfully misleading me. I wish that I had had more patience and I hope soon to make a further attempt. I think that intonation supplements their scanty vocabulary. They use the same clicks as the Sandawi, but I do not think that these clicks appear as much distinct syllables as they do in the Kangeju language. An accent on the last syllable is common, and I have noted a final “o” in many words which is barely heard. As an example of the paucity of vocabulary, the same word, “ati'i,” is used for water in a bucket, rain, a river, a large lake and a cup of tea. I attach a list of Kangeju words, but I cannot guarantee their correctness."
+
+### Maasai
+
+Merker, M., & Schütze, F. (1910). The Masai: ethnographic monograph of an East African Semite people. Dietrich Reimer (Ernst Vohsen). p.48.
+
+"Now the partner starts in the same way playing in his row, 37 to let the other play again as soon as he has placed a last stone in an empty compartment. The one who places a last stone in an empty compartment of his own row takes it and the ones lying in the adjacent compartment of the opponent's row for himself, and so on until, according to the rules, no more stones can be taken out of play. The one who has removed the most stones has won the match and gives himself a point. **Serving as counters are small, finger-thick, and spindle-shaped ivory sticks 15-20 centimeters long** ( ol alai, el ala ) 1 As tooth generally is called tusk of the elephant, ivory. . Before the game starts, there is an understanding as to how many points are to be played. Women never play this game, warriors rarely. The latter usually prefer the e[unknown] n gehé ('[unknown] n gehén) , which is played in much the same way, except that in any case about eight players for each side take turns and each row has 40 to 50 compartments, which are not chiseled into a board, but are scratched into the ground."
+
+p.206.
+
+"**The Masai count neither human beings nor cattle. It is believed, as the Israelites also did, according to 1st Chron. 21, that the ones counted would die. Thus, they correctly estimate larger multitudes of living creatures in round numbers, and small ones with quite great certainty.** Only dead persons, for example, the fallen warriors, are counted individually."
+
+### Somali
+
+Lewis, I. M. (1961). A pastoral democracy: a study of pastoralism and politics among the northern Somali of the Horn of Africa. Published for the International African Institute by Oxford University Press. p.75.
+
+"The young lads sent-out to the camps are trained to go without water and to live on milk alone. They learn the art of camel-husbandry, the care of the stock, and their water and pasture requirements. They are taught which are the best grasses, and which pasture is noxious and to be avoided. **Thus they learn to adapt themselves to living with the herds, to seek the best grazing, to deal with sickness and to count, water and milk the camels**."
+
+### Turkana
+
+Ohta, I. (1987). Livestock individual identification among the Turkana: the animal classification and naming in the pastoral livestock management. In African Study Monographs: Vol. Vol. 8 (Issue 1, pp. 1–69). Kyoto University, Center for African Area Studies. p.25-26.
+
+"**Some East African pastoralists are reported not to “count” their livestock when checking their presence in the herd. Lienhardt (1961: 22) states that the Dinka dislike “either stating in figures how many cattle there are [in one's herd], or counting them by numbers and not by names of particular beasts,… [cattle], are not merely so many individual ‘head of cattle’,… [they] should not be treated as just so many equivalent units in a herd”. The Dinka think that the cattle have their own individualities, and that they are not anonymous or substitutable of one another. This attitude is indubitably incompatible with checking the herd members' presence by counting the numbers.**
+
+For the Karimojong, who live next to the Turkana, Dyson-Hudson (1966: 98) states that “cattle are not enumerated, they are catalogued by name: an owner,… knows beasts are missing not by counting his herd, but by scanning and as it were leafing over the catalogue in his mind”.
+
+**Gulliver (1951: 21) states that the Turkana do not count their herd members.** He says, “I have often watched people in the evenings checking up on the return of the stock to the homesteads, not by counting heads, but by making sure that each one is there and that there are no strangers”. Animals are not counted by numbers, but each is checked one by one. Wienpahl (1985) also states that the Turkana do not count animals by numbers.
+
+...
+
+Each herder subdivides the goats under his responsibility into several smaller units, each of which has fixed members. The herders firmly bear in mind both all the members and the total number of heads of each unit. Let us call these units “checking units”.
+
+**When required to check the herd, the herder takes up his checking units one by one. The size of each unit is small enough for the herder to recall all of its members in his mind, and the total number of the members is also borne in his mind before he begins to check. Taking up one of these units, the herder confirms that each member is present in the assembled herd, and at the same time, he counts the number by folding his fingers.** All the unit members are confirmed to be present by getting the right figure. Then, he checks the next checking unit. He must also bear in his mind which units he has already checked."
+
+Leslie, P. W., & Dyson-Hudson, R. (1999). People and herds. In turkana herders of the dry savanna: ecology and biobehavioral response of nomads to an uncertain environment (pp. 232–247). Oxford University Press. p.239.
+
+"There is a curious juxtaposition of problems in studying livestock and human demography. While study of human demography is hampered by reluctance to talk about dead people, particularly children, study of herd demography is hindered by reluctance to count living animals. **Overt counting of someone else's livestock is considered impolite, and likely to harm the animals. Surreptitious counting is difficult and likely to be inaccurate for a variety of reasons (R. Dyson-Hudson and McCabe 1985).** For example one of the best places to observe an entire herd, outside the owner's corral, is at a watering point; but stock belonging to more than one family may mingle during watering."
+
+## Southern Africa
+
+### Bemba
+
+Richards, A. I. (Audrey I. (1939). Land, labour and diet in Northern Rhodesia: an economic study of the Bemba tribe. Pub. for the International Institute of African Languages & Cultures by the Oxford University Press. p.204.
+
+"In point of fact high numbers are not needed in ordinary Bemba life **since the objects to be counted rarely exceed 20 in number**, in distinction from the cattle-owning Bantu who reckon herds by the hundred and thousand. In fact the Bemba seem quite uninterested in big numbers as such. Their folk-tales, unlike those of a number of primitive peoples, do not dwell on the hundreds of **cattle, horses**, wives, spears, &c., that the hero possesses, but merely on **the difference between ‘many’ and ‘big’ and ‘very many’ or ‘very big’ expressed with great emphasis of the voice and a rising tone.**"
+
+### Ila
+
+Smith, E. W. & Dale, Andrew Murray, d. 1919. (1920). The Ila-speaking peoples of Northern Rhodesia: vol. 2. MacMillan and Co. p.231.
+
+"The Ila system of counting is decimal. They have distinct names for the numbers up to ten: one is mwi ; two is bidi ; three is tatwe ; four is ne ; five is sanwe (these are adjectival roots and take the qualifying substantival prefixes); six is chisambomwi ; seven is chiloba ; eight is lusele ; nine is ifuka ; and ten is ikumi. Eleven is ten and one; twelve is ten and two, etc., twenty is two-tens, etc., twenty-one is two tens and one, etc., a hundred is mwanda ; a thousand is chulu : the word is also applied to any great number. We have had workmen, ordinary unschooled young men, whom we could trust to count the number of poles in a waggon-load, say—361. **Men can very quickly tell whether a beast is missing from a herd: tell it more quickly than we could; but that is probably because, not of their facility in counting, but of their ability to recognise each beast by its colour and other characteristics.**"
+
+### Ovambo
+
+Estermann, C. (1976). The Ambo ethnic group. In , by carlos estermann: Vol. Vol. 1 (pp. 49–217). Africana Publishing Company.p.137.
+
+"**It is almost impossible to determine the number of head of cattle in the possession of a big proprietor; he does not know, because of his inability to make an exact count. It would be a mistake, however, to think that he does not know his own cattle. He knows them by color and by the shape of their horns; he knows the old ones and the young ones, and can often state the genealogy of a great number of them. In the absence of a count, he has estimates**, and they allow us to conclude that even today, in spite of the decrease in the herds caused by bartering for liquor, there are blacks who own a thousand head of cattle. The medium proprietors have herds numbering up into the hundreds."
+
+Loeb, E. M. (Edwin M. (1962). In feudal Africa. In Publication ... of the Indiana University Research Center in Anthropology, Folklore, and Linguistics; International journal of American linguistics,: Vol. v. 28 (Issue 3, pp. xxi, 383). [s. n.]. p.146.
+
+"On his trip through Ovamboland half a century after Andersson's visit, Lebzelter described two kinds of cattle: one a small breed not possessed of great endurance, but able nevertheless to withstand attacks of rinderpest; and the other, the larger Herero cattle. 8 8. Lebzelter, 1934, Vol. 2, p. 212. The latter, I presume, are the Egyptian longhorn. In our field work we observed that the cattle were usually piebald, although many were all black or auburn in color; that they varied in size from the smaller South Africander type to a large Zebu type; and that the size of the humps and the lengths of the horns varied a great deal, from shorthorn to longhorn strains. Although no census of domestic animals has been taken, it is known that the number of cattle has increased greatly since the cessation of wars. **The reason for their being no census is that owners will not count their cattle, since they believe that counting them brings bad luck to both owners and cattle. They recognize each animal in their herds by its markings and call each by name. They never brand their cattle.** 9 9. No authority reports that animals are marked in any way to indicate ownership. Sacred cattle, however, have a cut on one ear."
+
+### San
+
+Silberbauer, G. B. (1981). Hunter and habitat in the central Kalahari desert. Cambridge University Press. p.130.
+
+"The number system of the nominal structure imposes on the speaker the obligatory observation of that which is named by the noun or pronoun as to whether it refers to one, two, or more objects. This suffixal indication of grammatical numbers, of which two coincide with arithmetic numbers, makes the first two cardinal numbers in the vocabulary virtually redundant for counting purposes. Only the remaining cardinal number, n!ona - (three), is essential in counting. In practice, the first two cardinals, / wi - (one) and / am - (two), are used only for emphasis of arithmetic number. The paucity of numerals is no handicap to the G/wi, who seldom need to count; when they do, they manage adequately by indicating unnamed arithmetic numbers on their fingers. **The totals or amounts of objects are more often of importance (e.g., the food-plant harvest of the day; the size of a herd of game animals; the population of a camp), but these totals are not assessed as numbers but as amounts, that is, qualitatively rather than quantitatively.**"
+
+**p.135**
+
+"Collective nouns indicating aggregations of objects (e.g., “flock,” “herd,” “pride”) do not occur. This reflects the hunter-gatherer's preoccupation with quantity. Although this statement appears to contradict what I have said about numerals, **collective nouns are too imprecise for the G/wi, who require information on whether the animals are single, two, or more. If more, it would be of little importance if the number were greater than ten, which can be readily indicated on the fingers of two hands. The point is that there is a very limited range within which exact numerical information has relevance to hunting and gathering, and the G/wi verbal and nonverbal system of counting is adequate within this range**; consequently, the information contained in a collective noun would be redundant or valueless."
+
+### Shona
+
+Gelfand, M. (1979). Growing up in Shona society: from birth to marriage. Mambo Press. p.15.
+
+"Most Shona children learn how to count. They are taught by various people and in different ways. A boy, for example, might learn when he is old enough to herd cattle. **Whilst out with the cattle he learns from the older boys how to count them. In the evenings his parents or older brothers teach him formally, counting either with sticks or with his fingers.**"
+
+### Tsonga
+
+Junod, H. A. (1927). The life of a South African tribe: vol. 2. Macmillan and Co., Limited. p.167.
+
+"On the other hand it must be said that, if this system has not reached a higher development, the cause lies in the fact that Thongas do not wish, or do not take the trouble to deal with high figures. They very soon declare that a number is: “tjandjabahlayi (Dj.) or hlulabakonti (Ro.)” viz., “the one which passes the capacity of reckoners.” When Gungunyana made a raid into the Ntimane district and stole the oxen there, **his men tried to count the cattle, but, having experienced much difficulty in the operation, they said to their king: “It is tjandjabahlayi!” — “They are innumerable!” There were a few hundreds of them (1) (1) As regards counting men, in former times this was positively prohibited. If any one, seeing a throng assembled on the hubo, wanted to know the number of people present, they would say to him: “What! You are counting us? Whom do you want to do away with?” (Shana wa hi nkonta, u ta hi pumba na?) .**"
+
+
+## Western Africa
+
+### Dogon
+
+Calame-Griaule, G. (1986). Words and the Dogon world. Institute for the Study of Human Issues. p.125.
+
+"This category is composed of all the numbers, calculations, and utterances used for counting. A common saying holds that “the ten men of early times began counting in fives” (yà: íne[unavailable] p[unknown]lu nùm[unavailable]n[unavailable] lug[unavailable]), with 10 referring to the ancestors, as we have seen, and 5 to the fingers of the hand. (We may observe also that 10 corresponds to the sum of fingers on both hands.) 61   The numbers 5 and 10 explain why this speech mode is fifteenth in the series.
+
+**The corresponding technique is “making account [to see] whether all the animals have arrived” (b[unknown]lu k[unknown]u doá:-ma lúgu). When the shepherd leads the flock back to the main family house, the head of the household counts the animals to be sure that none is missing.**"
+
+### Fon
+
+Herskovits, M. J. (Melville J. (1967). Dahomey, an ancient West African kingdom: volume 1. Northwestern University Press. p.116-119.
+
+"The manner in which livestock was taxed may next be considered. **Cattle, pigs, goats, sheep and horses were counted, but not chickens, since these fowl, according to informants, cannot be counted—“If you count chickens today, tomorrow there will be more.”** During January, February, and March, the months of the campaigns and the great hunt, the animals mentioned above were allowed to run free. When the rainy season began, that is, when the growing crops might be damaged by these animals, it was ordered that they be confined. It was an offence punishable by an imprisonment of three months or more to allow an animal to be free during this time, a law which is still enforced. In the short dry season before the second crops were planted the animals were again allowed to graze freely, but in the succeeding months, when crops were once more growing, all the animals were again required to be carefully confined. **Any animal that strayed and entered the field of another might be killed by the owner of the field, who needed to give only a hind-quarter to the owner of the animal.** 1 1 The aside to this was, “Dahomeans are often hungry for meat, and so it sometimes happens that a rope by which an animal is tethered is cut to cause it to stray.”
+
+The actual count began in October, the pigs being first enumerated so that the number of slaughterers of pigs might be determined. The King summoned three men who were hereditary chiefs of the butchers, named Aisu, Adjlni and Gbesdje. These three, who were the vendors of pork in Abomey, were members of the same sib. 2 2 See below, pp. 184–186. They were asked to give the names of the villages in which they bought their pigs, whereupon the King sent a message to the chiefs of these villages ordering them to bring all who had sold pigs to the butchers or who had pigs for sale to come to the palace, as a new price was to be established for their animals. **As the men came, a pebble was set aside for each, this being done in the actual presence of the King himself.** The tonukwe of each village stood at the side of the King as it reported, for the tonukwe had already quietly counted the number of animals in his village, noted to whom they belonged, and therefore was in a position to indicate when anyone falsified his return. In this manner an initial count was obtained, which was confided to the nayé concerned. This count, it must be noted, was so taken that the total number in hand was divided into the number of males and females of each species. An order was promulgated that no sows were to be slaughtered, since through them the stock of pigs is reproduced and maintained, and with this those who had come before the King were instructed to return to their villages, and told that a check on their statements would be made in six months. As they left, the palace, an order was sent out to all the officials in charge of the toll-posts throughout the kingdom to permit, no pigs to pass their controls.
+
+...
+
+The count of other livestock—cattle, goats, and sheep—was made in a different fashion. On the day of one of the great markets, a crier was sent to inform the people that the yalao, the chief-priest of the river yáln, a stream which runs near Kana and is inhabited by a feared and powerful spirit, had issued notice that the god of the river had spoken, saying the harvest would not be good, and that an epidemic among the livestock was imminent. **Every man or woman was therefore instructed to come to the palace in three days—that is, in two days—and to bring a caury-shell for each of his animals as a ceremonial offering**; one for each goat, one for each head of cattle, one for each sheep, keeping separate those for the various kinds of animals. Before bringing the cauries, however, each animal was to be struck with the caury representing it, to take away the danger that threatened it. Faced with the possibility of the death of their livestock, all made haste to fulfil the injunction. Important here for the purpose of the ruler was the assurance that no one would attempt to bring a smaller number of cauries than the number of animals he owned, and that the count would be correct. The total number of cauries when assembled made an impressive sum, and since it was to be given as an offering from the entire kingdom, the King added a large amount of palm-oil before the total was sent to the yalao. The people, of course, were greatly impressed with the amount the King added to their individually minute contributions and, when the predicted epidemic did not occur, all credit was given him for the prompt and generous action which, it was believed, had saved their livestock.
+
+The real purpose of this ruse—the counting of these animals for tax record—must not be forgotten, however. **It was remarked that each contributor was instructed to keep separate the cauries for his cattle, for his sheep and for his goats. Inside the palace, between the time when these cauries were given and when they were sent to the yalano, one of the nayé counted them, putting aside a pebble for each caury, and depositing each of the three piles of counters in a separate sack. On that which represented the number of cattle a horn was sewn**; that which represented the number of goats was decorated with the representation of a beard; while on the sack which contained the pebbles telling the number of sheep, weeds and a tongue were appliquéd. If, in addition, this method was employed to obtain an enumeration of pigs—for these were sometimes also included as an additional control, and to further conceal the real purpose of the alarm—the representation of a butcher's knife was sewn on the sack which held the count of these animals.
+
+That it was not possible to utilize such a ruse on every occasion was recognised, and care was taken that the pretext was varied from one time to the next. Thus, at another time, the priest of the yalan river might send out an alarm that his god had warned him a great flood was coming, and in it many animals would be drowned. Perhaps a week before the alarm was given, a number of goats were strangled and their bodies left where they might easily be found. The next night the same thing was repeated, but this time sheep were killed; the next several cattle were done away with. By this time, naturally, rumors to account for the mysterious killing of these animals were flying, and when the crier announced the impending flood, everyone was prepared to act at once to put off the disaster. Or again, at another time, when misfortune befell someone and he consulted his diviner to ascertain the reason, he was told that, according to the word of Destiny, one of the Earth deities was killing his animals because he had had nothing to “eat” for a long time. The inquirer was informed that this deity had ordered palm-fronds to be placed about the necks of all livestock, and that a caury must be given him for every animal owned in the kingdom, so that suitable offerings could be purchased for him. The use of these palm-fronds was felt to be serious indeed, and everyone hastened to comply by depositing the requisite number of cauries at the proper shrine to the Earth god, for it was said that the King, being a rival to the “King of the Earth,” washed his hands of the entire affair. Nevertheless, the taví and the kpogri, two chiefs who supervised the priestly cults were present, and when the cauries had been brought, a pebble was set aside for each caury, these soon finding their way into the hands of the official within the royal compound who was entrusted with keeping count of livestock."
+
+### Fulani
+
+Stenning, D. J. (1964). Savannah Nomads: a study of the Wodaabe pastoral Fulani of Western Bornu Province, Northern Region, Nigeria. Published for the International African Institute by Oxford University Press. p.147-148.
+
+"On the topics of human and bovine fertility, the Wodaabe, and perhaps all Pastoral Fulani, are most reluctant to provide the direct information appropriate to the collection of suitable data. In this they resemble any society in which the formal collection of demographic and economic data is not usual. But a symmetry in the attitudes of male and female informants may be noted here. It was generally found that women, the producers of children, were evasive, shy, and gave inaccurate or deliberately false information about the children born to them or their kinswomen. They would, however, discuss within the limits of their knowledge, the herds owned by their menfolk, in ways which gave some confidence in their accuracy. **Pastoral Fulani men, who have to do with cattle, are notorious for avoiding all official attempts to count the beasts in their herds or to discuss their ages systematically. To ask a man how many beasts he has is pointless and indiscreet, for cattle are not counted, lest by doing so their number is made finite.** But to inquire the number of children a man's wives have borne is reasonable, so long as it is done in private, for a man does not want to boast of a large family, or to have to own to a small one, in public. Asked how a fertility inquiry might best be carried out, a chief replied: ‘If you want to count our children, call the elders one by one, lest they feel shame or pride. **If you want to count cattle, go and do so if it pleases you, but do not tell us their number, for it is not our custom to count them.**’"
+
+### Kpelle
+
+Gay, J., & Cole, M. (1967). The new mathematics and an old culture: a study of learning among the Kpelle of Liberia. Holt, Rinehart and Winston. p.41.
+
+"We must now determine just what the people do and do not count in daily life. Our observations indicate that it is possible to count many things but that some things are not counted. **For instance, it is not proper to count chickens or other domestic animals aloud, for it is believed that some harm will befall them.** This has also been the case in many other non-Western cultures, including that of the Old Testament, where it was not considered proper to count people aloud, lest some die. The Liberian government requires the Kpelle to count people from time to time, both for the census, and for taxes, but it is not a traditional practice. People count houses, poles for building houses, bags or other measures of rice, kola nuts, and other commonly used items. Counting is not so common an activity as it is in more highly commerical or technological cultures."
+
+
+# Asia
+
+## North Asia
+
+### Chukchee
+
+Bogoraz-Tan, W., Vladimir Germanovich (Bogoras. (1904 [Part 1]; 1907 [Part 2]; 1909 [Part 3]//). The Chukchee: material culture [part 1], religion [part 2], social organization [part 3]. In Memoirs: Vol. XI (pp. xvii, 733 , 35 plates [HRAF pagination-incomplete]). E. J. Brill, Ltd.; G. E. Stechert and Co. p.51.
+
+"“**The herdsmen, of course, never count their reindeer, nor are they able to remember all their animals by their looks, as has been asserted by travellers....In the larger herds they know only the more conspicuous animals, such as breeding-bucks, old dams, harness-animals, etc. If there be any loss, they become aware of it only by the absence of one of them. Of the smaller animals they take little notice, nor do they care much about them**.
+
+The Rev. Argentoff relates that....a rich reindeer-breeder from the Dry Anui....**tried to ascertain the number of his animals by counting them by corrals. Each corralful was represented by a chip of wood, and these were placed together in a glove.... Operations of this kind were performed by the rich Tungus for the same purpose; but among the Chukchee they can occur only exceptionally, because every new experiment with the herd is considered to thwart the....herd's good fortune**....”"
+
+p.79
+
+"“Although the Chukchee have a very imperfect system of numerals, and **never know the exact number of animals in their herd**, still they keep a strict proportion between its integral parts. Fertile does always form a large majority. The largest bucks, aside from those used for breeding, are usually gelded. Such geldings and a few barren does are allowed to fatten. The harness-reindeer are also geldings, with the exception of a few large barren females with large antlers. The majority of the bucks are killed for their skins in the first fall of their lives. On an average, there are in a herd, to every hundred breeding-does, about a dozen breeding-bucks, from ten to fifteen sledgereindeer, and from sixty to seventy half-grown fawns. In a large herd (Plate IV, Fig. I) there may be to a thousand breeding-does thirty breeding-bucks, eighty sledge-reindeer, and from three hundred to four hundred fawns. The number of fattened bucks varies from a very few to about as many as there are breeding-does. However, large bucks and barren does are highly prized, since the Chukchee assert that a herd without bucks with large antlers looks poorly, and that without barren fattened does, all signs of wealth disappear. Even in springtime, when almost every doe is with fawn, the Chukchee herdsman is often more ready to kill a breeding-doe than a large fattened buck.”"
+
+Priklonskii, V. L., & Wise, S. (1890). Three years in the Yakut Territory: ethnographic sketches. In Zhivaia Starina: Vol. Vol. I (Issue 1, pp. 63-83  [HRAF pagination-incomplete]). [s.n.]. p.1.
+
+"1 [The main body of this article is in the Yakut File as 29: Priklonskii--Analyst.] [80] In the northeast tundras of the Yakut territory, wanders the small tribe of the Chukchee with their comparatively large herds of reindeer. The principal point where they gather to barter their goods with the Russians is the so-called fortress of Anyuy. Not moving from place to place so often as the Tungus, the Chukchee have heavier dwellings: a wooden framework is covered with reindeer skins with the hair, and, moreover, inside, separate cubicles are constructed of the same kind of skins, so that the inside part serves as a reception room for guests, and the side parts as the living quarters and for storing goods; the floor is covered with reindeer skins and bearskins. The Chukchee have practiced polygamy up to the present time, and, depending on his means, a master will have as many separate chooms as he has wives. Of all the native tribes of the territory, the Chukchee are the most self-sufficient, and have preserved [81] their independence; on the snowy steppes of their icy homeland the Chukchee consider themselves to be luckier than all their neighbors, whom they regard with pity; having few demands, they are easily satisfied with the produce of their herds, which give them their dwellings, their clothing, their food and everything which is necessary for nomadic life; they bear the conditions of their life with ease and equanimity and do not envy others, for they see that in order to have the necessary pleasures or comforts of life it is necessary to give up their natural independence; only trade has brought them together somewhat with Russians and Americans. Although the Chukchee move from place to place, their noticeable tendency toward settled life is expressed in their collecting stores, in their thrift, and even miserliness--qualities which are completely incomprehensible to nomadic peoples. **It must be remarked that north of Yakutsk one hardly finds a few dozen people, with the exception, of course, of officials and ecclesiastics (but not of their wives), who can count even to 20, and therefore it should not be surprising that the Chukchee do not know the number of head in their herds.** The clothing of the Chukchee consists of a wide, heavy reindeer kukhlyanka (in the form of a shirt), and the long fur breeches [ sharovary ] are adapted to the rather immabile life. The men and the women shave their heads, though the men leave long hair around their head in the form of a hoop, and the women leave braids on their temples. The men's head decoration consists of bits of metal plaited in the hair, and strings of beads in the ears; the men and the women tattoo their faces, hands, chests, and shoulder-blades with a needle, rubbing in powder to make little sores. These mnkelii remain throughout life without coming off. With the approach of death the Chukchee perform a customary sacred ceremony: the father asks his eldest son “to let him go to the springs”. The son, through a reindeer-buckskin curtain, from the left-hand side of the bed, with a firm hand pierces the heart of his parent. Polygamy and letting-go-to-the-springs are becoming rarer phenomena. The Chukchee are divided into the settled or coastal Chukchee and the reindeer-raising or nomadic Chukchee. The coastal ones supply the nomads with whale ribs and whalemeat, walrus-skin straps and walrus oil, and receive in exchange reindeer skins and ready-made clothing. To illuminate and heat their tents the Chukchee use moss soaked in whale oil. Their food consists of cooked venison with seal oil or fish oil; the Chukchee consider to be delicacies polar bear meat and whale skin, which they eat raw, leaving a thin layer of meat on it; they love frozen reindeer brain; they prepare a drink from meat juice with snow and drink it from cups through reindeer bones or through a little pipe made from a swan's wing; they use fish only in case of want, and [82] they show a decided aversion for salt. All of them smoke tobacco, even the women; Circassian tobacco is too strong, and therefore, like all natives, they smoke it with the addition of wood shavings. As a delicacy they eat tal'nik leaves, fermented in seal oil, and the bark of tal'nik roots, eaten with the same sour oil; they also eat sea cabbage [ morskaya kapusta ]. Perhaps nine tenths of the whole population of the territory, and the Chukchee among them, chew hardened larch wax as a delicacy; it cleans the teeth and mouth and furnishes the stomach with abundant saliva, so necessary for the digestion of such coarse and heavy food."
+
+### Koryaks
+
+Jochelson, W. (1905). The Koryak. In Publications of the Jesup North Pacific Expedition (Vol. x, p. xv,842). E. J. Bril; G. E. Stechert. p.427.
+
+"NUMERATION AND MEASURES. — The Koryak system of numeration, like that of the Chukchee, has two bases, — five, the number of fingers on one hand; and twenty, the number of fingers and toes combined, or simply the man. They Koryak are not expert in the use of numbers. The majority of them, even at the present time, use their hands and feet as helps in computing even small numbers; but even so, they count better than the Chukchee. **I saw Reindeer Koryak with several hundred reindeer who knew their number exactly. The traders from among the Maritime Koryak can not only reckon mentally small numbers (not above a hundred) without the help of fingers or sticks, but even have a curious way of keeping their accounts.** 1 1 See Chapter XI, Figs. 248–250. While I was among the Chukchee, I saw traders who were absolutely unable to count.
+
+In the Kolyma district, not far from the Indigirka River, I once met a wealthy Chukchee returning from the Russian settlement called the Russian Estuary. He was in the habit of exchanging reindeer-meat and tea with the hunters of the tundra for their arctic foxes, and selling them to the Russian merchant from whom he was returning when I met him. Before retiring to bed, he took out of a leather bag bricks of tea, and arranged them in a row, in pairs. **Then he took from another smaller bag little willow sticks, and placed a stick on each pair of the bricks of tea. The number of the sticks corresponded to the number of the fox-skins he had had.** In this manmer he checked off the exchange he had effected, and he usually received two bricks of tea for each arctic fox. This time a few pairs of bricks were left uncovered by the sticks. The Chukchee decided that the merchant had made a mistake. Subsequently, when I met the Russian merchant, it turned out differently."
+
+### Yakut
+
+Popov, A. A., & Ward, N. (1935). Reindeer breeding among the Dolgan. Sovetskaia Etnografiia, 184–205. p.18.
+
+"**The reindeer, which is an object of private property, is marked by each owner with a particular sign called the belie. The most reliable markings are considered to be figures made by making cuts in the ears of the animal, without making any distinction between the right and left ear; these ear cuts have different appellations depending on their form [Fig. 17]. Independently of the markings on the ears, the natives cut signs with a knife in the form of different combinations of lines in the hair on the sides of the reindeer [Fig. 18].** They do this in the month of the spring sunrise, after the polar night--the time of severe cold--has passed, in order that the reindeer may not get frostbitten in the places where the hair has been cut off. The signs of ownership are the same both for bucks and for mares. Cult signs, as among the Tavgi, are not found among the Dolgan. When the children of a family grow up and are given part of the reindeer herd for their own, the old markings are left on the grown reindeer, and the new markings are put only on the offspring. The youngest son, who is the last in line to receive the family wealth, receives his father’s markings by inheritance. The markings of the husband are put on reindeer which are received as part of a dowry. When an owner buys another reindeer he cuts his own markings into its ears, and one may often see reindeer with several markings in their ears. It must be added that when an owner has a large herd not all the reindeer are marked with the signs of ownership. **The Dolgan have an amazing ability [Facing 198: Figure 16 on an unpaginated insert] 199 to recognize their own reindeer even after several years have passed, and even when the reindeer were only calves when last seen. Rich reindeer breeders often have more reindeer in their herds than they can count, but if they see one of their own reindeer in someone else’s herd they recognize it at once, even if it has no markings; at the same time they are unable to say which reindeer are missing in their own herds.** We tried to find out how this was done, but even the Dolgan themselves could not explain it, but only said that it was so simple because the eye “gets used to” one’s own reindeer. [Fig. 17] If a strange reindeer attaches himself to a herd the owner of the herd passes the word along and supports the reindeer until its owner is found."
+
+### Yukaghir
+
+Jochelson, W. (1975). The Yukaghir and the Yukaghirized Tungus. In American Museum of Natural History, New York. Memoirs; The Jesup North Pacific Expedition. Publications: Vol. v. 13 (pp. xvi, 469 , [15] leaves of plates). AMS Press. p.364.
+
+"...**I know, from my own experience, that the reindeer breeder does not like to be questioned as to the size of his herd, either on superstitious grounds, or because he fears that new taxes will be imposed. On the other hand, many breeders count their, herds by females only, not taking into account the males and fawns.** This was the case with the Tungus of the Gishiga-Okhotsk country, among whom the author made a census of reindeer. On an average there are in a herd of 1000 reindeer, about 500 breeding does, 20 breeding bucks, 150 geldings for driving, riding and killing, and from 250 to 300 fawns."
+
+## Southeast Asia
+
+### Ifugao
+
+Villaverde, J., Worcester, D. C., & Case, L. E. (1909). The Ifugaos of Quiangan and vicinity. Philippine Journal of Science, Vol. 4, 237-262,plates. p.255.
+
+"The usurers, who, in order to count a dozen have to **make use of their fingers and, when the number passes ten, to sit down in order to count their toes, do not lose the count of the chickens which they lend**, nor of a single sweet potato."
+
+# Europe
+
+## Scandinavia
+
+### Saami
+
+Anderson, M. (1978). Saami ethnoecology: resource management in Norwegian Lapland. University Microfilms International. p.91.
+
+"To carry out this procedure, the herder lassos the unmarked calf, draws it to him and to the ground, and marks the ears while sitting upon the left side of the animal, or another person may assist in holding the animal down. He cuts out the same pattern as borne by the cow which it was following. **One of the largest pieces of the ear pattern is not discarded with the rest, but placed in the mouth, then into the tunic pocket, to be later strung on a cord as a type of bookkeeping. These strings are seldom held separately by year or by individual owner in a family. Some persons cut a notch on the knife sheath or on a piece of wood, sometimes noting the calf's sex.** Corresponding notes of herd decrements are not made, though of course animals sold to the slaughterhouse are tallied there."
+
+Bernatzik, H. A., & Ogilvie, V. (1938). Overland with the nomad Lapps. Robert M. McBridge & Co. p.18.
+
+"Every time an animal is separated from the herd and brought into one of the pens the owner cuts a mark with his knife in a tree trunk at the entrance to the pen. This is a simple form of book-keeping, by which he can see how many bucks, hinds and fawns he has mustered."
+
+Itkonen, T. I., Guemati, O., & Perez-Roman, E. (1948). The Lapps in Finland up to 1945. Vol. 2. Werner Söderström Osakeyhtiö. p.244.
+
+"**Not a very long time ago there was in certain places the habit of using a “counting-stick” as a sort of “accountbook” between the reindeer owner and the herdsman of the association. The number of the reindeer was marked on the four-cornered stick (see illustr. p. 266), which bore the mark and name of each one concerned. The oxen were marked by a notch cut from edge to edge, the “kisura” or mixed reindeer, i.e. the females and young reindeer, by a half-notch and the fawns by a point.** 2 PAULAHARJU, Lapin muisteluksia, p. 264; compare ELGSTR?M, Karesuandolapparna, p. 78; DRAKE, p. 280 (Luulajan-Lappi). The Kolt-Lapps have also used a similar stick to count their reindeer (see p. 266). Formerly the fawns counted in summer were marked by notches on the walking stick (e.g. west-I. reind.) 3 HALONEN, (Pykällys, p. 16) states that formerly a notch was cut in the ski-staff for each counted reindeer."
+
+p.265
+
+"Reindeer breeding among Kolt - Lapps is quite similar to that of Inari, but they own fewer reindeer. Until the end of the 19th century the wild-reindeer were, in this region, economically as important as the reindeer, and the change to exclusive reindeer breeding was difficult. Old people still remember the wild-reindeer times as a lost paradise and, as a rule, the Kolts are still today beginners in rearing big herds. 2 NICKUL, Terra 1933, pp. 76-7. In the beginning of the 20th century some families are said to have owned five or six reindeer, several families twenty to fifty, some few 100 to 200, three families 300 to 390, one 400, and another family 800 reindeer. 3 PAULAHARJU, Kolttain mailta, p. 77. In this region the search also begins in autumn. A searcher in Suonikylä disposes of four or five load reindeer, that will carry, among other things, forty straps, an ax, a gun, an extra pair of shoes, a lasso, hay for the shoes + = dried sedges that the Lapps use in their shoes in place of stockings. (Transl. note.) , a wind-shield, at least six loaves of bread, as well as cakes and salted fish. The excursion takes one and a half to two weeks in an area with a diameter of fifty to a hundred km. A wealthy reindeer owner may have several searchers at a time. **A searcher makes about three or four Fig. 383: “Counting stick”, on which the counted reindeer are marked. (in the lower drawing “spread out”): a) males, b) females, c) oxen, d) fawns, e) one-year olds.** Suonikylä. 1/3. excursions every autumn. Ten to twenty men meet at the “agreement-place” ( leht't-sajj [unknown] ). They may sometimes spend several days together, camping by a fire. Log fires ( [unknown]nuer't[unknown] s [unknown] ) are lit only when the cold is intense and shelters ( k[unknown] ovas ) are stretched only in rainy weather. They try to arrange agreement-places in different regions. When the reindeer have been “split”, the men return to their “autumn places”, close to which the herds are tended. During rut females are tethered. Near the autumn place reindeer are slaughtered for the herdsmen's use, those for sale only during the sleighing season. **When the reindeer are counted the owner may mark the number of his reindeer on a four sided stick (four faced) ( puaddz a -lohkkom-muorr ) with notches, which are marked with a knife on the edges of the stick; the males, oxen, females, fawns, and one year olds are marked on separate edges.** Formerly the females were not milked at all, except in Kolttaköngäs, but later this custom was acquired from the inhabitants of Inari. Autumn milking takes place at about nine a.m. and five p.m.; the milk is collected in reindeer rumens (first stomach). Late in fall, when there are no wolves, the herd is watched over as little as once a week, but when the beasts are threatening the herdsman is constantly present; dogs are not used very much in tending. The Kolts get together for Christmas, gathering the herds ( tsieyyâr ) in winter villages. 1 The description concerns the period before 1945. They tend the herds at twenty to forty km from the village, which is put up in a lichen-abounding region. Those with few reindeer gather in groups of two or three families, tending their animals together. The reindeer reserved for domestic use are kept tethered quite near the village, the house having also some lichen in store. Since the 1910's some western Kolts have left their herds at the autumn places, where they are tended in turn by family members. Occasionally people from Inari are hired as herdsmen ( t[unknown] sieyyarnik' ). In the winter village life is fairly free. Only during this century have they begun to practice freighting (e.g. for the Inari merchants). The “Kolt-reindeer” is superior to others, renowned for its size and bearing. A freight caravan may include even twenty draft reindeer; a journey between Inari village and Reisfiord yielded seven marks per sled in the 1910's."
+
+p.714.
+
+"Concerning reindeer there is a great abundance of beliefs, particularly among the reindeer-Lapps. The Lapps sometimes use indirect names for the reindeer and the herd, e.g. kâd'd[unknown] zâ = “hoof,' hil'bes-kâd'd[unknown] zâ = “proud hoof” = female reindeer, s[unknown] anâh = “fawn,” but this is not necessary. -- **A reindeer-Lapp never counts his animals, or they will end in the “number-limit,” i.e. reduce so much that they cannot be counted. Nor should he communicate to others the exact number of his reindeer, not even to the tax collectors**."
+
+p.939
+
+"**The verb lohkkâh (Finnish lukea = count, read) means counting (and reading). The number of reindeer was marked on a counting stick (K. puaddz a -rohkkom-muorr ), a 4-sided stick. In old times the Lapps, when taking goods on credit from the merchants who had to be paid at the same time the following year, used a counting stick (Lapp > Finnish kilkula ). The debt was marked on the stick, on which the Lapp made his own mark. A notch was cut on the stick for every rix-dollar, after which the stick was divided in two, one half being kept by the creditor, the other by the Lapp.** The counting-stick was also in use among the Finns, the Swedes and even many primitive peoples such as the Ostyaks. -- In addition to the word “a couple” (pair) (parrâ & Scandin.) the Lapps have another word meaning “two similar objects” = spârru (& Norwegian), K. sparr a “two dried codfish, hung up to dry from the tails; a double hook.” -- Kodtur , I. kodorv (probably & kodti [unknown] tóar'vi “a wild-reindeer-amount”) means all four flayed shank-skins ( k[unknown] amâs- kodtur ) of a slaughtered reindeer, or the tendons torn off all its legs, plus the back-tendons. -- The tendon-strings are twisted into rings of 20 pieces (K. p[unknown] arma h k' , I. suonn a -p[unknown] almag ). -- Bunches of dried sedges for shoes are twisted into a large ring ( suöi'dne-fierrâ ) of at least 150 pieces (I. reind.-L.). Rai'au is a caravan with 10 to 12 reindeer and a kóallus is a file of reindeer without vehicles, not more than 20. An eällu is a herd with more than 1,000 reindeer, a t[unknown] s[unknown] ora a herd with fewer than 1,000 reindeer, while a t[unknown] s[unknown] orrâyâ[unknown] s is a flock of a few hundred head (I. reind.-L.). These terms may also be considered as words indicating counting, although their use is restricted to a limited sphere."
+
+Beach, H. (1981). Reindeer-herd management in transition: the case of Tuorpon Saameby in northern Sweden. In Acta Universitatis Upsaliensis. Uppsala studies in cultural anthropology (pp. xix, 542 , [17]  of plates (1 folded)). [Uppsala Universitet]; Distributed by Almqvist & Wiskell International. p.252.
+
+"...**Anders G. Omma marks a calf by notching its ears with his unique, personal pattern. A reindeer's ear, marked in two different ways. The Saamish pattern of notches can be read on a running reindeer at considerable distance.** Lars Anders Blind delivers a calf to its rightful owner for marking. Besides the marking of calves, other husbandry chores, such as the castrating of bulls, may be performed in the summer; here, a young bull is being thrown to the ground. The herd separations at Parka begin around August 10. Nils Anders Blind pulls one of his reindeer to the Jokkmokk side of the corral, while Elli Karin, his sister, scares and prods the reindeer from behind. Alf Teilus, from Udtja forest Saameby, walks one over to the Jokkmokk side at Parka. A bull has been slaughtered for household consumption outside the Valli corral during the large, pre-rut, bull slaughter in September. Five dead buils at a time are transported by helicopter from the Valli mountain corral to the road's end in Kvikkjokk, where the slaughterhouse truck waits. December 1975. Nils Anders Blind leads the small sled caravan and covers the rear of the Viri Group's herd on its eastward migration to the lowlands. As the reindeer are gathered from the west, they are corralled in the lowlands for both separation and slaughter. The swirling herd surrounds itself with a cloud of snow mist. Around the perimeter of winter separation corrals, there are frequently numerous booths or “kontora”, into which herds can be broken down according to various, shifting, group constellations. The herder looks for his mark in a sea of reindeer. The exhausting work of herd separation is interrupted for coffee and a cigarette around a fire outside the corral. Separations are exciting events, which often the entire family attends. **Another winter chore is the reindeer count. Henrik Blind carries a paint brush on the end of a stick. A red paint spot signals that a reindeer has been counted and recorded under its owner's name. Henrik knows most of their earmarks by heart.** Ann-Katrin Blind asks her mother to check the reindeer-count list to see how many of her reindeer are present..."
+
+## Southeastern Europe
+
+### Greeks
+
+Campbell, J. K. (1964). Honour, family and patronage: a study of institutions and moral values in a Greek mountain community. Clarendon Press. p.30.
+
+"The Sarakatsan shepherd identifies himself with his animals. Their condition is almost as personal a concern as his own health and appearance. If a sheep is stoned by another man, the shepherd's honour is touched. In numbers and quality sheep are the prerequisite of prestige. He is aware of their dependence on him and of the dependence of his whole family on what the flock is able to supply. **He knows each animal, its history, and peculiarities. There is an extensive descriptive vocabulary of sheep terms. Skilled shepherds do not count their sheep, they scan them, recognizing at once the absence of an animal identified by a particular combination of markings, colours, and idiosyncrasies.** Sick sheep are tended with care and compassion. A shepherd may sleep with the animal under his cape to give it warmth. He is neither gentle nor sentimental towards his sheep but between the man and his animals there exists an evident solidarity."
+
+
+# Middle East
+
+## Middle East
+
+Musil, Alois. 1928. “The Manners and Customs of the Rwala Bedouins.” In Oriental Explorations and Studies, No. 6. no. 6. 1928, New York. The American Geographical Society. p.523.
+
+"Concealing their camels in a gully, they find out in the daytime how many camps there are in the neighborhood and where the camels are grazing; **at night they try to count the tents and horses in the camp**."
+
+
+# North America
+
+## Eastern Woodlands
+
+### Seminole
+
+Garbarino, M. S. (1989). Economic development and the decision-making process on Big Cypress Indian Reservation, Florida. University Microfilms. p.73.
+
+"However, included in the owner's share of 15 per cent there are still other possible charges: 1. Labor charges due; 2. House loans; 3. Water loans; 4. Short term loans; 5. Arts and crafts charges; 6. Others. It took a literate anthropologist a day to get this information. It was almost impossible for an illiterate Indian (who did not even know where to go for information) to get an explanation. Because Little Joe was behind in his loan payment (due to a very small calf crop) all his sales after operating costs and livestock commission had to be credited to repayment of interest and principal. This complicated accounting was very difficult for the old Indian to understand even when someone was willing to explain to him. Even after explanation it is doubtful whether he really grasped the reasons for his lack of cash income. The interviewer saw many cash sheets with the statement, “Net to Owner -0-.” Most of the recipients were as mystified as Little Joe. **Some of the Indians asked the interviewer to go to the agency and look up the size of loan still to be paid off, and sometimes even the size of the herd owned, particularly among old people who often cannot count beyond a dozen. They not only cannot keep track of their own herd size and calf crop, but have no grasp of the magnitude of the debt owed.** They do not understand percentages, and to go one step further, it may be assumed that they cannot conceive of the immense financial operation required to run a cattle industry. They understand only that their charges are so high that they absorb all the income from sales, and therefore, the promises of “money left over to spend for things” have not been fulfilled."
+
+MacCauley, C. (1887). The Seminole Indians of Florida (pp. 469–531). Smithsonian Institution. p.525.
+
+"As a guide towards a knowledge of the primitive manner of counting the method used by an old man in his intercourse with me will serve. He wished to count eight. He first placed the thumb of the right hand upon the little finger of the left, then the right forefinger upon the next left hand finger, then the thumb on the next finger, and the forefinger on the next, and then the thumb upon the thumb; leaving now the thumb of the right hand resting upon the thumb of the left, he counted the remaining numbers on the right hand, using for this purpose the fore and middle fingers of the left; **finally he shut the fourth and little fingers of the right hand down upon its palm, and raising his hands, thumbs touching, the counted fingers outspread, he showed me eight as the number of horses of which I had made inquiry**."
+
+## Plains and Plateau
+
+
+## Plains and Plateau
+
+### Navajo
+
+Roberts, J. M. (John M. (1951). Three Navaho households: a comparative study in small group culture. In Reports of the Ramah project; Papers: Vol. v. 40 (Issue 3, pp. xiii, 87 , plates). Published by the Museum. p.58-59.
+
+"Someone in each household had kept tally by notching a stick. Elder Son B had kept count on the days he had worked for his Spanish-American employer by this method. **Grandfather C, Mother C, Father A, and Mother A specifically stated that they sometimes cut notches in sticks when counting sheep. Father A cut one notch for every hundred sheep; Mother A, one for every ten or fifteen sheep; Mother C, one for every ten sheep. It might be remarked that the herders did not have to count their sheep when they knew each sheep as an individual animal. Daughter B readily missed stray sheep from her flock, but she did not count them. As a matter of fact, she was not able to count very high.**
+
+...
+
+**Father B and Mother B said that they did not cut notches in sticks in tallying as did the others. Instead, they picked up rocks or sticks as an aid in counting. Father B said that he sometimes changed rocks from one hand to the other every twenty sheep.** Father B was the member most conversant with weights and measures because of his education and his experience working in a store. Grandfather B was the only person who could repeat the old Navaho names of months with certainty."
+
+### Western Apache
+
+Goodwin, G., & Goodwin, J. T. (1942). The social organization of the Western Apache. In Ethnological series (pp. xx, 701). The University of Chicago Press. p.381
+
+"Property not left expressly under the control of a surviving mate or some other individual was ordinarily administered by the eldest or most influential living brother of the deceased, or, in the absence of brothers, by a maternal uncle or a sister's grown son. When the time came to distribute the property, the man in charge of it sent word to the widow or widower and the children and had the cattle rounded up. He gave so many head to each relative entitled to and desiring a share, at the same time setting aside a slightly greater portion for himself. The remainder, forming the largest part of the property, was turned over to the widow or widower and the deceased's children. **In dividing the property, it was common to apportion it by means of twigs or strips of yucca leaf, each standing for one animal.**"
+
+# Oceania
+
+## Australia
+
+### Aranda
+
+Schulze, L. G., & Tepper, J. G. O. (1891). The aborigines of the upper and middle Finke River: their habits and customs, with introductory notes on the physical and natural-history features of the country. Transactions and Proceedings and Reports of the Royal Society of South Australia, Vol. 14, 210–246. p.221.
+
+"“Although only able to count up to four, they can individualise large herds of cattle or horses, and can tell at once if one is missing, and which, and what its color or appearance may be.”"
+
+## Melanesia
+
+### Manus
+
+Gustafsson, B. (1992). Houses and ancestors: continuities and discontinuities in in leadership among the Manus. IASSA. p.272.
+
+"On occasions when exchanges of wealth between affinal kin were to be made, the men belonging to the same tali would gather in the men's house to prepare a meal consisting of meat. Usually they would cook the meat of a pig which had been received in the exchanges. The pig was taken to the men's house where it, after it had been killed, was covered with leaves and placed over a fire. Here it was left until all the bristle had disappeared. Then the meat was placed on banana leaves and cut into pieces. Each piece of meat was shared in groups of between two to four men. After receiving the meat, the men would take their piece, put it on fresh leaves and roast it between heated stones or over a wooden fire (Nevermann 1934: 190). The only part of the pig that was not distributed was the skull and maybe the intestines. The lower jaw bone was always saved. The bones, together with the jaw bones from pigs received in earlier affinal exchanges, were fastened onto one of the beams of the house. In the men's houses there would also be skulls from pigs, cuscus, and turtles. The skulls were often painted red, black, white and yellow, while geometrical patterns were carved onto the jaw bones (pp. 209–10). If there was a special young men's house in the village, the jaw bones from animals that had been prepared and eaten in this house would also be saved. **A man who had received a pig would always save the skull, or sticks symbolizing it, in order to be able to keep count of the number of distributions of wealth he had received** (p. 299)."
+
+### Northeastern Massim
+
+Damon, F. H. (1990). From Muyuw to the Trobriands: transformations along the northern side of the Kula Ring. University of Arizona Press. p.30.
+
+"Counted things are not understood to make up a year, and years themselves are not counted. But the category “year” contains activities for which counting is important. Yams are planted once a year, people keep track of how many they plant, and, barring climatological crises, they anticipate how many they should be able to plant in a succeeding year. Mortuary rituals are conducted by any given actor at most once a year, and although there are many dimensions to these rituals, **the most important is the tally of pig debts existing before and after the ritual**. The only interisland sailing regime conceptually tied to times of the year, that between Budibud and Muyuw, runs according to strict quantitative dimensions. In Muyuw thought and experience, “quality” and “quantity” are complementary dimensions."
+
+### Siwai
+
+Oliver, D. L. (1955). A Solomon Island society: kinship and leadership among the Siuai of Bougainville. Harvard University Press. p.101.
+
+"Potentially, then, it is possible for a Siuai to talk precisely in terms of, say, the 22nd house, 178 coconut palms, or 1000 leaves. **In actual usage, however, these natives seldom number most items past ten, the general qualifier “many” ( ponna ) is specific enough for most uses, except for such entities as pigs, sheets of thatch, shell money, and other items which are commonly utilized in large numbers.** Because of frequent use as a general standard of value, the set of numerical adjectives used to qualify spans of shell money occurs very frequently in utterances; and the set used to qualify certain hard and roundish items (shell-money discs, areca nuts, etc.) functions almost as an abstract numeration system because of the frequency of talk about large numbers of such items."
+
+## Polynesia
+
+### Tongans
+
+Collocott, E. E. V. (Ernest E. V. (1927). Kava ceremonial in Tonga. The Journal of the Polynesian Society, Vol. 36, 21–47. p.26.
+
+"Before any kava is prepared for drinking presentations of food and kava are brought and placed before the king and chiefs. These are arranged in orderly rows, pigs, yams, etc., and kava, so as to be easily viewed. Motu'apuaka directs that they be counted. **This is done by a man who walks along the rows of baskets, touching each in turn and counting in a loud voice. When he reaches ten a second man jumps up, holding a staff, and calls “one”; the first man continues counting to twenty, when the second man shouts “two,” and so on up to one hundred, when the second man calls “ten,” and a third man gets up, holding a staff, and shouts “one.” So they go on, the first man actually counting, the second keeping count of the tens, and the third of the hundreds. Should the number of baskets go into the thousands a fourth man would join in. When the counting is finished the result is formally announced, so many pigs** (distinguished by the way they are prepared and brought, which is some indication of size), so many plants, roots and bundles of kava (also distinguished by the way in which they are brought and size), so many baskets of yams, and perhaps other details are mentioned."
+
+# South America
+
+## Central Andes
+
+### Inka
+
+Murra, J. V. (1980). The economic organization of the Inka State. In Research in economic anthropology. (p. xxxii,208). JAI Press. p.126.
+
+"Hernando, a man who was startled by nothing, since everything seemed no more than his due, reports with some awe that when the warriors pass by they find a firewood and maize depot and everything else and **they count by some knots in some strings whatever each local chief has brought. And when they had to bring us some loads of wood or llamas or maize or chicha they took off some knots from those who had it in charge and knotted it down somewhere else**: in everything they had much accounting and reason. 42 42. Hernando Pizarro [1533], 1959, p. 88. Most every other source available to us mentions this accounting system, if not for warehouses, then in census taking, **llama herding** or the memorizing of historical tradition."
+
+## Southern South America
+
+### Abipón
+
+Dobrizhoffer, M. (1822). An account of the Abipones, an equestrian people of Paraguay: volume 2. John Murray. p.168.
+
+"Most of the American nations are extremely deficient in words to express number. The Abipones can only express three numbers in proper words. Iñtára, one. Iñoaka, two. Iñoaka yekainì, three. They make up for the other numbers by various arts: thus, Geyenk ñatè, the fingers of an emu, which as it has three in front and one turned back, are four, serves to express that number. Neènhalek, a beautiful skin spotted with five different colours, is used to signify the number five. If you interrogate an Abipon respecting the number of any thing, he will stick up his fingers, and say, leyer iri, so many. If it be of importance to convey an accurate idea of the number of the thing, he will display the fingers of both hands or feet, and if all these are not sufficient, show them over and over again till they equal the number required. Hence Hanámbegem, the fingers of one hand means five; Lanám rihegem, the fingers of both hands, ten; Lanám rihegem, cat gracherhaka anámichirihegèm, the fingers of both hands and both feet, twenty. **They have also another method of making up for want of numbers. When they return from an excursion to hunt wild horses, or shoot tame ones, none of the Abipones will ask them how many horses have you brought home? but, how much space will the troop of horse which you have brought home occupy? to which they will reply, the horses placed in a row would fill the whole market-place, or they extend from this grove to the river's bank. With this reply, which gives them an idea of the quantity of horses, they remain satisfied, though uninformed of the exact number. Sometimes they take up a handful of sand or grass, and showing it to the interrogator, endeavour in this way to express an immense quantity. But when number is spoken of, take care you do not readily credit whatever the Abipones say. They are not ignorant of arithmetic, but averse to it. Their memory generally fails them. They cannot endure the tedious process of counting.** Hence to rid themselves of questions on the subject, they show as many fingers as they like, sometimes deceived themselves, sometimes deceiving others. Often, if the number about which you ask exceed three, an Abipon, to save himself the trouble of showing his fingers, will cry Pòp! many. Chic leyekalipì, innumerable. Sometimes, when ten soldiers are coming, the assembled people will exclaim, Yoaliripì latenk naúertápek, a very great number of men are approaching."
