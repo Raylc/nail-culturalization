@@ -1,6 +1,6 @@
 ---
 title: "Appendix: HRAF Ethnographic Sources"
-author: "Compiled by **xx**"
+author: "Compiled by **Cheng Liu**"
 date: "`r Sys.Date()`"
 fontsize: 11pt
 output: 
@@ -353,7 +353,7 @@ Klass, Morton. 1978. From Field to Factory: Community Structure and Industrializ
 
 p.77.
 
-The napit (barber) comes (to all who live in Ũcu or Brahman pa□ as) and for the first time since the birth, hair, nails, and beards of the members of the household are cut.
+The napit (barber) comes (to all who live in Ũcu or Brahman paas) and for the first time since the birth, hair, nails, and beards of the members of the household are cut.
 
 p.109.
 
@@ -411,7 +411,7 @@ The Kerala customs according to Gundert include the following information. Keral
 
 ...
 
-When a Nampūtiri woman was pregnant, the husband and another Nampūtiri used to say prayers and perform rituals every day for the sake of good progeny. The prospective father used to let his beard, hair and nails grow. This is called garbha-dīkṣa. There were many other situations where a male person was supposed to remain unshaven in India, like the brahmacarya period and the dīkṣa. I understood from what NNA said that cutting of these bodily margins, dangerous as such, was counted as an act of violence as well, as was speaking harshly and cutting trees. (NNA, p. 26.)
+When a Nampūtiri woman was pregnant, the husband and another Nampūtiri used to say prayers and perform rituals every day for the sake of good progeny. The prospective father used to let his beard, hair and nails grow. This is called garbha-diksa. There were many other situations where a male person was supposed to remain unshaven in India, like the brahmacarya period and the diksa. I understood from what NNA said that cutting of these bodily margins, dangerous as such, was counted as an act of violence as well, as was speaking harshly and cutting trees. (NNA, p. 26.)
 
 p.292.
 
@@ -766,7 +766,7 @@ Whenever you cut your nails, make sure you pick them up and put them somewhere s
 
 Musil, Alois. 1928. “The Manners and Customs of the Rwala Bedouins.” In Oriental Explorations and Studies, No. 6. no. 6. 1928, New York. The American Geographical Society. p.124.
 
-Every woman likes to dye her palms and nails, and if she be old also her hair, with yellow henna, either of the Egyptian variety, ma□rijje, or of a variety brought from Mecca, makkâwijje; the latter is the better.
+Every woman likes to dye her palms and nails, and if she be old also her hair, with yellow henna, either of the Egyptian variety, marijje, or of a variety brought from Mecca, makkâwijje; the latter is the better.
 
 # North America
 
@@ -1064,11 +1064,6 @@ Although in the schools, in the subject of hygiene, there is general instruction
 
 ## Amazon and Orinoco
 
-### Mundurucu
-
-Burkhalter, Steve Brian. 2001. Amazon Gold Rush: Markets and the Mundurucu Indians. University Microfilms International. p.172.
-
-Young women and girls dab themselves with cheap perfume bought from traders and often paint their finger and toe nails. More occasionally, they use lipstick. Men use cheap colognes and sometimes take expensive soaps with them when they bathe, although more often they forgo soap altogether. Older men use Gessy, a hair cream, to keep their hair in place, just as do older caboclos.
 
 ### Nambicuara
 
@@ -1080,11 +1075,11 @@ Nearly all permit their nails to grow freely, for they make useful implements to
 
 Price, Richard, and Sally Price. 1991. Two Evenings in Saramaka. 1991, Chicago. University of Chicago Press. p.86.
 
-That morning Konoi’s son Kôndèmása—who had been charged with bringing the seriously ill man back to Saramaka—had arrived with several kinsmen in Akísiamáu, Bèkióo’s matrilineal village just downstream from Dángogó, bringing news of the death, and carrying the hair-and-nail relics in a little metal chest. 77 77. There is a rigid prohibition, dating back to the eighteenth century, against bringing a corpse back from whitefolks’ territory: “Dead people can’t be brought over Mamádan Falls,” says the aphorism (R. Price 1990). During the previous week, as their canoe had passed each village along the river on its way upstream, Kôndèmása and his companions had fired salutes and, at villages where Bèkióo’s friends or kinsmen answered, had gone ashore akudjunó and his father, Asipéi, both 1978 . for a spontaneous “play” in his honor. When Kôndèmása finally arrived in Akísiamáu, three gunshots rang out, women began wailing, and village elders poured water and rum on the earth to apprise the ancestors of the news. Soon a “play” broke out, with drumming, singing, and dancing, and later in the day a simple miniature coffin was constructed for the hair-and-nail relics.
+That morning Konoi’s son Kôndèmása—who had been charged with bringing the seriously ill man back to Saramaka—had arrived with several kinsmen in Akísiamáu, Bèkióo’s matrilineal village just downstream from Dángogó, bringing news of the death, and carrying the hair-and-nail relics in a little metal chest...Soon a “play” broke out, with drumming, singing, and dancing, and later in the day a simple miniature coffin was constructed for the hair-and-nail relics.
 
 Herskovits, Melville J. (Melville Jean), Mrs. Herskovits Frances (Shapiro), and Bush Negroes Of Dutch Guiana. 1934. Rebel Destiny: Among the Bush Negroes of Dutch Guiana. 1934, New York. Whittlesey House, McGraw-Hill Book Company, Inc. p.30.
 
-But now Tenye’s maternal aunt who had approached unobserved came to call the children away. She was not in good humor, and looked with disfavor on the friendly conversation between us. Her bad temper, we learned later, had earned for her the name of Mother Snake, given her by a witty town servant of a lumber factor. The idea of dressing our hair apparently appealed to the woman, however, for it would certainly only be a reckless white who would offer his hair for combing to a stranger, since with hair any number of supernatural things might be done. With the proper formula, a few hairs, and the required ingredients she might fashion an opo , let us say. Now an opo serves many purposes, but its essential quality is that it gives its owner power over the one whose essence is captured in the form of hair, or a scrap of garment, or finger nails, or whatever else had touched the person against whom one has designs. The power of the possessor of the opo is to dominate the will of the other, and its particular attribute might be to function in love, or in a court of justice, or in matters of getting employment, or of receiving gifts. But an opo would be the least dangerous consequence, for an opo is not to be conceived of as being in the category of bad magic. There is the danger of wisi —a word which has the double meaning of poison and black magic—and hair, or finger nails, or the menstrual cloth of a woman, or perspiration are the very best materials for working wisi.
+The idea of dressing our hair apparently appealed to the woman, however, for it would certainly only be a reckless white who would offer his hair for combing to a stranger, since with hair any number of supernatural things might be done. With the proper formula, a few hairs, and the required ingredients she might fashion an opo , let us say. Now an opo serves many purposes, but its essential quality is that it gives its owner power over the one whose essence is captured in the form of hair, or a scrap of garment, or finger nails, or whatever else had touched the person against whom one has designs. The power of the possessor of the opo is to dominate the will of the other, and its particular attribute might be to function in love, or in a court of justice, or in matters of getting employment, or of receiving gifts. But an opo would be the least dangerous consequence, for an opo is not to be conceived of as being in the category of bad magic. There is the danger of wisi —a word which has the double meaning of poison and black magic—and hair, or finger nails, or the menstrual cloth of a woman, or perspiration are the very best materials for working wisi.
 
 ### Sirionó
 
@@ -1103,13 +1098,13 @@ How the first ynga mango capac commanded that the uacas idols be worshiped and t
 
 Vega, Garcilaso de la, and Clements R. (Clements Robert) Markham Sir. 1963. “First Part of the Royal Commentaries of the Yncas.” In Works Issued by the Hakluyt Society, No. 41. no. 41. B. Franklin. p.127.
 
-The Yncas also believed in a universal resurrection, not for glory or punishment, but for a renewal of this temporal life; for their understanding did not rise above the actual state of existence. They took extreme care to preserve the nail-parings and the hairs that were shorn off or torn out with a comb; placing them in holes or niches in the walls, and if they fell out, any other Indian that saw them picked them up and put them in their places again. I very often asked different Indians, at various times, why they did this, in order to see what they would say, and they all replied in the same words, saying—“Know that all persons who are born must return to life” (they have no word to express resuscitation), “and the souls must rise out of their tombs with all that belonged to their bodies. We, therefore, in order that we may not have to search for our hair and nails at a time when there will be much hurry and confusion, place them in one place, that they may be brought together more conveniently, and, whenever it is possible, we are also careful to spit in one place.”
+They took extreme care to preserve the nail-parings and the hairs that were shorn off or torn out with a comb; placing them in holes or niches in the walls, and if they fell out, any other Indian that saw them picked them up and put them in their places again. I very often asked different Indians, at various times, why they did this, in order to see what they would say, and they all replied in the same words, saying—“Know that all persons who are born must return to life” (they have no word to express resuscitation), “and the souls must rise out of their tombs with all that belonged to their bodies. We, therefore, in order that we may not have to search for our hair and nails at a time when there will be much hurry and confusion, place them in one place, that they may be brought together more conveniently, and, whenever it is possible, we are also careful to spit in one place.”
 
 ### Uru-Chipaya
 
 Vellard, Jehan A. (Jehan Albert), and Ariane Brunel. 1959. “Bibliographic Notes and Documents on the Uru.” Travaux de l’Institut Francais d’Etudes Andines Vol. 7: HRAF,ms:,1-16,Original:,29-41. p.11.
 
-…How many times did our religious, at the peril of their lives (owing not to the depth of the water but to the thickness of the totora) go to save Indians of over 30 and 40 years of age who were unbaptized and who had never come to a town…. Their idolatries are to worship the sun and this lake…. They are inclined to steal… they are wolves because they will eat a raw sheep and they wear the nail of the right thumb so long and so sharp 37 that they can tear it up without need of a knife…. For years I heard it said in that Province, like a refrain: “From the Uro Indian, no man is safe…. /Translated from the Spanish.
+they are wolves because they will eat a raw sheep and they wear the nail of the right thumb so long and so sharp 37 that they can tear it up without need of a knife….
 
 ## Eastern South America
 
@@ -1118,12 +1113,6 @@ Vellard, Jehan A. (Jehan Albert), and Ariane Brunel. 1959. “Bibliographic Note
 Pierson, Donald, and Herman R. Lantz. 1967. “Negroes in Brazil.” In Perspectives in Sociology. 1967, Carbondale. Southern Illinois University Press. p.102.
 
 A fashion which in the early part of the nineteenth century served “to mark the high rank of those (of either sex) who adopted it” was that of “permitting the nails of the fore-finger and thumb to grow to a great length...[and be] cut to a sharp point.” 106 106 Andrew Grant, History of Brasil (London, 1809), p. 234. Today, while the whites in Bahia no longer follow this fashion, one occasionally sees individuals of prominence in the Negro group—for instance, Māe Anninha of the candomblé of São Gonçalo—with long fingernails.
-
-### Tapirapé
-
-Wagley, Charles. 1977. Welcome of Tears: The Tapirapé Indians of Central Brazil. 1977, New York. Oxford University Press. p.166.
-
-The next day Taniwaya appeared in the village plaza; her whole face was swollen horridly. She returned after a bath and spent most of that day and the next reclining in her hammock. I was told that for several days she could eat only kawi, so painful were her face and jaw. The swelling continued for more than a week; then her wounds formed scabs which she was not supposed to scratch with her finger-nails. After about a month the dried scabs began to fall off and the black design similar to a tattoo design was left on her face for the rest of her life.
 
 ### Tupinamba
 
@@ -1135,9 +1124,9 @@ They pull out any hair growing on their bodies with their nails. The women shave
 
 Henry, Jules, Ruth Benedict, and Hans F. Kraus. 1941. Jungle People: A Kaingang Tribe of the Highlands of Brazil. 1941, Locust Valley, New York. J. J. Augustin. p.183.
 
-The period of waikômáng is exceedingly variable. Until a few years ago the end of waikômáng was marked by angdjïdn, the festa of rattles. In preparation for this event, which marked the reacceptance of the thûp□ya by his group, beer was prepared. But before the thûp□ya returned he had to be completely cleansed of his spouse's “dirt,” 9 9 Nyangglï, dirt; taboo as applied to food. and to this end the people who went to fetch him cut his hair, “because when he slept with his wife their heads were together,” and his finger nails. It is said of women that their nails were cut “because they used to get meat under their nails in preparing food for their husbands.” The people sang during the entire rite of cutting the hair and nails in order to frighten off the kuplêng. The songs that were sung during the death rituals are called ëhëdn; 10 10 From the stem hë, whole, entire, sound. The purpose of these songs is to keep people well. some of them were sung only at certain points in the ritual series, while others are not ritual songs but are part of the general song repertoire of each man. 11 11 See p. 192 this section. While the hair was being cut it was held with a bit of medicine to protect the cutter, and when the task was finished hair and nails were pounded up in a mortar with a number of herbs, including the ubiquitous tapir's raw food, and thrown into the water. 12 12 “They also cut the hair of her small child. Its father used to see its hair; so they cut it off.” The hair at the nape of the neck was never cut off in this rite, for that would cause death.
+The period of waikômáng is exceedingly variable. Until a few years ago the end of waikômáng was marked by angdjïdn, the festa of rattles. In preparation for this event, which marked the reacceptance of the thûpya by his group, beer was prepared. But before the thûpya returned he had to be completely cleansed of his spouse's “dirt,” 9 9 Nyangglï, dirt; taboo as applied to food. and to this end the people who went to fetch him cut his hair, “because when he slept with his wife their heads were together,” and his finger nails. It is said of women that their nails were cut “because they used to get meat under their nails in preparing food for their husbands.” The people sang during the entire rite of cutting the hair and nails in order to frighten off the kuplêng...
 
-“The hair is thrown into the water because they are afraid to let it rot on earth. The first-born [i.e. the ancients] came out along the water, and therefore they throw the hair into the water.” Like tapir's raw food, water is a general life-symbol to the Kaingáng. In the same way the hair and nails of young children are thrown into the water “so that they will grow. Otherwise the children would dry up and die,” and the umbilical cord is placed in the water for the same reason. The Kaingáng have great faith in bathing wounds with water, and all herbs are mixed with water before they are applied to the body as remedies.
+“The hair is thrown into the water because they are afraid to let it rot on earth. The first-born [i.e. the ancients] came out along the water, and therefore they throw the hair into the water.” Like tapir's raw food, water is a general life-symbol to the Kaingáng. In the same way the hair and nails of young children are thrown into the water “so that they will grow. Otherwise the children would dry up and die,” and the umbilical cord is placed in the water for the same reason.
 
 ## Northwestern South America
 
@@ -1159,11 +1148,11 @@ Nordenskiöld, Erland, and Frieda Schütze. 1912. Indian Life: The Gran Chaco (S
 
 p.57.
 
-The Chiriguano and various Chané shampoo the head with the seeds of “ nyantéra ,” which they grind. For the same purpose the Chané on the Rio Parapiti use the bark of the mistol / Zizyphus mistol Griseb./ . “ yúag .” The nails, and / 205 / not least the toenails, are also very carefully tended. For combing they use combs carved in wood or made out of sticks of cane tied together.
+The nails, and / 205 / not least the toenails, are also very carefully tended.
 
 p.86.
 
-Table 9. The distribution of stained teeth. Map 8 . 4. Chiriguano, VIEDMA P. 181. Men and woman. 4L. Caxinaua, CAPISTRANO DE ABREU P. 459. 5L. Indians north of Peru, POEPPIG Vol. 2, P. 253. Men. 34. Jivaro, HERMESSEN P. 440, Men. 36. Ijca, BOLINDÉR (4) P. 114. Men. 39. Goijiro, WAITZ Vol. 3, P. 373. 46. Conibo, RAIMONDI P. 667. See also CASTELNAU Vol. 4. P. 568. 61. WHIFFEN P. 88. »Among the Orahone, and also among some of the Iça and Yapurá Indians, the women cover their teeth and their finger-nails with a black pigment. The paint is never allowed to work off entirely, fresh designs being superimposed before the original has quite disappeared.» 
+Among the Orahone, and also among some of the Iça and Yapurá Indians, the women cover their teeth and their finger-nails with a black pigment. The paint is never allowed to work off entirely, fresh designs being superimposed before the original has quite disappeared.» 
 
 ### Mataco
 
@@ -1171,47 +1160,34 @@ Pelleschi, Juan, and Samuel Alexander Lafone Quevedo. 1896. “The Mataco Indian
 
 p.36.
 
-“Men and women alike shave their heads completely. They use, for that purpose, the sharp jaw of a certain fish, and their own teeth serve them to pare their nails. They cover themselves as best they are able from their waists to their knees. The men, on gala occasions, often wear a sort of sleeveless jacket and hang a kind of bag from one shoulder in which they keep a crude wooden pipe, fire making equipment and other nicknacks. Both the bag and the coat are knitted, made from agave or chaguar fiber, and curiously marked. They pull out their beards, eyelashes and eyebrows, and either to improve their looks or in order to appear more terrible in battle, they blacken their faces and chests with coal dust.”
+“Men and women alike shave their heads completely. They use, for that purpose, the sharp jaw of a certain fish, and their own teeth serve them to pare their nails.
 
 p.46.
 
-“All of them cut their hair with a knife or with the teeth of fish, this for lack of scissors, which implement would have only a limited utility among them anyway. They also customarily pierce their ears, in order to insert a piece of stick or something as a fine ornament. The men pluck out with their nails the few hairs which grow on their faces, and some also pull out their eyelashes and eyebrows.”
+The men pluck out with their nails the few hairs which grow on their faces, and some also pull out their eyelashes and eyebrows.
 
 Fock, Niels. 1963. “Mataco Marriage.” Folk, Dansk Ethnografisk Tidsskrift Vol. 5: 91–101. 
 
-p.92.
-
-It has already been mentioned that young men and women seeking love can often be recognized by the painting of their faces and by a general urge to adorn themselves. Also restricted to this period are a special broad armlet made of black and white beads, and—particularly for the girls—an ordinary white string of beads from which depend red woollen cords with bead tassels that hang down the neck (Fig. 1). Young men who seek or have just found a sweetheart, traditionally evince great musicality, and are practically the only ones who play the Jew’s harp and a primitive musical bow. The music gives expression to longing and unrequited love. Young couples have a special form of caress, pressing the cheek of their partners with the points of their nails. This leaves behind small wounds visible for a week or more, and is proof of great infatuation.
-
 p.97.
 
-The Mataco are monogamous. There are very few examples of men with two or three wives, and then it was always a matter of chiefs. The polygyny of chiefs is probably an ancient custom, as it is sanctioned in the account about the first appearance of woman. Incidentally, monogamy is strictly enforced, and no form of extra-marital sexual relatins is socially sanctioned. In case of infidelity within a marriage, distinction is made between the unfaithfulness of a man and of a woman, the latter’s being considered the more serious offence. If a man commits adultery it is often said that a young girl has intervened. In that case the wife—when she realizes what is going on—with some of her female relatives, attacks the girl. For this reason, in earlier days particularly, girls never cut their nails in order that they could draw blood from any rival. It is noteworthy that whereas the wife obtains the help of her female relations, the same is not so in the case of the intervening girl. Her family maintains “that it is not worth fighting about”, but in view of the absolute solidarity that is customary within families, it must mean that her conduct is regarded as positively wrong, by her own kin, that is to say, socially.
+In case of infidelity within a marriage, distinction is made between the unfaithfulness of a man and of a woman, the latter’s being considered the more serious offence. If a man commits adultery it is often said that a young girl has intervened. In that case the wife—when she realizes what is going on—with some of her female relatives, attacks the girl. For this reason, in earlier days particularly, girls never cut their nails in order that they could draw blood from any rival.
 
 ### Ona
 
-Gusinde, Martin, and Frieda Schütze. 1931. “The Fireland Indians: Vol. 1. The Selk’nam, on the Life and Thought of a Hunting People of the Great Island of Tierra Del Fuego.” In Expeditions. 1931, Mödling Bei Wien. Verlag der Internationalen Zeitschrift. 
+Gusinde, Martin, and Frieda Schütze. 1931. “The Fireland Indians: Vol. 1. The Selk’nam, on the Life and Thought of a Hunting People of the Great Island of Tierra Del Fuego.” In Expeditions. 1931, Mödling Bei Wien. Verlag der Internationalen Zeitschrift. p.315.
 
-p.315.
+Any body hair is quite generally regarded as unattractive. For this reason all the adults pluck out the eyebrows as well as the sparse pubic and axillary hair...The single hair is grasped between the thumbnail and the nail of the index finger and pulled out with a sudden jerk.
 
-Any body hair is quite generally regarded as unattractive. For this reason all the adults pluck out the eyebrows as well as the sparse pubic and axillary hair. The latter would not be tolerated even by old people, though they would let the former develop to some extent. The fine down all over the bodies of babies is removed a few days after birth. Men pluck out their few and sparsely placed beard hairs. Nowadays, to be sure, 223 some wish to emulate the Europeans and let their mustache stand when it has reached a certain fullness. The always weakly developed hair on the calf and lower arm is usually left, though this is regarded as unattractive. During the Kloketen celebration I saw how a few young men were ashamed of the pubic hair that had grown back during that time; they should have removed it earlier. Now they rubbed fine ashes into the pubic region, in order to be able to pluck better. The single hair is grasped between the thumbnail and the nail of the index finger and pulled out with a sudden jerk.
-
-p.1224.
-
-Meanwhile each of the men sought the sitting place assigned to him (p. 1262). Halemink ordered the two Kloketen to sit down on the spot, for their need to rest had long been tormenting them. From now on the guides again appeared very helpful. They brought their protégés their fur cloaks and wrapped them up well in them; they themselves immediately squatted down directly behind them. In their complete exhaustion the candidates were left to themselves for a bit. In the meantime the men enjoyed themselves in lively conversation. Meanwhile the guides brought in and arranged a k[unknown][unknown] el each for their protégés; they handed these to the leader. He himself tied them to the forehead of each candidate with his own hands. No particular words were spoken for this. Afterwards he left the hut and hunted outside for suitable little sticks. Here at the fire he cut them properly to a point. For each Kloketen this little stick was 854 stuck behind the k[unknown][unknown] el over the ear. It was to be used for scratching his head. To do this with the fingers would have the result that the skin at the edge of the nail would become torn (cf. Ill. 24, p. 305).
-
-p.1446.
-
-1. The introduction of the candidates takes place amid special formalities. First their bodies are painted with red color; immediately 1016 older people accompany them to the Great Hut, where the wrestling with [unknown][unknown]'[unknown] rte begins, and after a short rest the k[unknown][unknown] el is put on them, with which they are enrolled in the circle of the men (p. 1224). Through this forehead ornament the candidate is supposed to have his self-awareness strengthened and his self-respect enhanced; he is now a man and has outgrown childhood. At the same time he is given a finger-long stick called k[unknown] '[unknown][unknown] and k[unknown] k[unknown] m[unknown] ker . It is made to hang down on the free thread-end of the k[unknown][unknown] el , or it is stuck loosely behind the ear, as a European shoves his pencil behind the shell of the ear (Ill. 24). Everyone is supposed to use this little stick all his life, to be sure, but the men become careless in this habit after a few years and finally drop it altogether. It is said that a person who scratches his head with his fingers will tear the skin at the root of the nail. (186) A similar stick for the same purpose is given the candidates at the youth initiation of the Yamana. A few other South American tribes, which cannot be specifically named here, also practice this custom. On the very first evening the candidate is given some enlightenment about the goal and meaning of this secret affair, as well as about his own conduct. On the following days he is made familiar with all the details and constantly instructed.
 
 ### Tehuelche
 
 Musters, George Chaworth. 1872. “On the Races of Patagonia.” Journal of the Anthropological Institute of Great Britain and Ireland Vol. 1: 193–207. p.197.
 
-On state occasions, such as a feast on the birth of a child, the men further adorn themselves with white paint—a powdered gypsum, which they moisten and rub on their hands, and thus make five white finger-marks over their chests, arms, legs, etc. Nearly every morning the men have their hair brushed out with a rude description of brush, by their wives, or if unmarried, their sisters or female friends, who take great care to burn any hair that may be brushed out, as they fully believe that spells may be worked by evil intentioned persons who can obtain a piece of their hair or nails. After the hair-brushing is finished, the women adorn the men's faces with paint; if in mourning they put on black paint, and if going to fight, sometimes put a little white paint under the eyes, which assists, in contrast to the other, in giving a savage expression. The women paint each other's faces, or if they possess a small piece of looking-glass, paint their own. The women on the eve of their wedding-night cover their bodies all over with white paint, and a child on its birth is also similarly whitened.
+Nearly every morning the men have their hair brushed out with a rude description of brush, by their wives, or if unmarried, their sisters or female friends, who take great care to burn any hair that may be brushed out, as they fully believe that spells may be worked by evil intentioned persons who can obtain a piece of their hair or nails.
 
 Musters, George Chaworth. 1873. At Home with the Patagonians. 1873, London. J. Murray. p.170.
 
-The men's hair is dressed by their wives, daughters, or sweethearts, who take the greatest care to burn any hairs that may be brushed out, as they fully believe that spells may be wrought by evil-intentioned persons who can obtain a piece of their hair. From the same idea, after cutting their nails, the parings are carefully committed to the flames. After the hair-brushing, which is performed by means of a rude hand-brush, the women adorn the men's faces with paint; if in mourning they put on black paint, and if going to fight, sometimes put a little white paint under the eyes, which assists in contrast to the other in giving a savage expression. The women paint each other's faces, or if possessed, as sometimes occurs, of a fragment of looking-glass, paint their own. Both sexes tattoo on the forearm, by the simple process of puncturing the skin with a bodkin, and inserting a mixture of blue earth with a piece of dry glass: the usual patterns consist of a series of parallel lines, and sometimes a single triangle, or a double triangle, the upper one resting on the apex of the lower. I myself had one line tattooed by a fair enslaver, and confess that the process was rather painful.
+The men's hair is dressed by their wives, daughters, or sweethearts, who take the greatest care to burn any hairs that may be brushed out, as they fully believe that spells may be wrought by evil-intentioned persons who can obtain a piece of their hair. From the same idea, after cutting their nails, the parings are carefully committed to the flames.
 
 ### Yahgan
 
@@ -1223,4 +1199,4 @@ There are, however, some mourners who after about three weeks begin to take some
 
 p.1326.
 
-Body painting is prescribed for the actual participants, the yékamuš and the usw□léxamuš. All of them are completely naked 1405 cont. during the entire time that they remain in the hut. To paint themselves, each one scrapes fine powder from a lump of lime or clay with his incisors and mixes it with saliva by chewing it. He spits this on the palm of his hand and rubs it over his whole body. Before the mixture dries another man helps him complete the design. This man puts his fingertips close together and with his nails scratches vertical grooves into the pigment from the forehead to the ankles, that is, down the whole length of the body. These grooves later give the impression of dark lines that have been drawn in the pigment. Some men do not bother to use more than one finger to scratch in several grooves. On some days the leader also reaches for □mi powder, a signal that all the participants are likewise to paint themselves red and to put the many lines on this background. Some of the men merely rub the white or red powder into the hair; most of them smear a good deal of the sticky tumar□pu on their heads. Everyone ties the apaw□ a around his forehead, the feather ornament reserved exclusively for the yékamuš, not the strip of skin with down feathers known as hapa□l (p.713). Everyone renews this body painting every day, usually in the afternoon when they all do it at once. The persons who are in the hut as helpers or spectators and all the women yékamuš must paint their faces and the upper part of their bodies white. They must also draw a finger-thick red line from the corners of the mouth to the ear lobes. No one may remain in the l□ma house without being painted.
+This man puts his fingertips close together and with his nails scratches vertical grooves into the pigment from the forehead to the ankles, that is, down the whole length of the body. These grooves later give the impression of dark lines that have been drawn in the pigment.
