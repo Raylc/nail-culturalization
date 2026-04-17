@@ -14,6 +14,8 @@ library(rnaturalearthdata)
 library(geodata)
 library(terra)
 library(scales)
+library(stringr)
+library(patchwork)
 ## Load the data set
 nail <- read.csv("./data/nail.csv", fileEncoding="latin1")
 EAsocieties <- read.csv("./data/eHRAF coverage.csv", fileEncoding="latin1")
@@ -117,82 +119,6 @@ ggsave("figure/Fig.1.png", width = 14, height = 9, dpi = 300)
 
 
 
-
-###################
-# distribution of context by subsistence
-
-# Identify the context columns for reshaping
-context_columns <- c("general", "status.signaling", "ritual", 
-                     "ornamentation", "magic", "tooling", "punishment")
-
-# Pivot the data to a long format for ggplot
-df_long <- nail1 %>%
-  select(Subsistence, all_of(context_columns)) %>%
-  pivot_longer(cols = all_of(context_columns), 
-               names_to = "Context_Type", 
-               values_to = "Presence") %>%
-  filter(Presence == 1)
-
-# Create a bar chart showing the frequency of contexts within each subsistence category
-ggplot(df_long, aes(x = Subsistence, fill = Context_Type)) +
-  geom_bar(position = "dodge") +
-  theme_minimal() +
-  labs(title = "Distribution of Nail Modification Contexts by Subsistence Type",
-       x = "Subsistence Category",
-       y = "Count",
-       fill = "Context") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-ggsave("figure/context by subsistence.png", width = 14, height = 9, dpi = 300)
-
-# Create a bar chart showing subsistence categories grouped by context
-ggplot(df_long, aes(x = Context_Type, fill = Subsistence)) +
-  geom_bar(position = "dodge") +
-  theme_minimal() +
-  labs(title = "Subsistence Strategies Distributed by Modification Context",
-       x = "Context Type",
-       y = "Count",
-       fill = "Subsistence Category") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-ggsave("figure/subsistence by context.png", width = 14, height = 9, dpi = 300)
-
-
-# Create a bar chart showing percentages of subsistence within each context
-ggplot(df_long, aes(x = Context_Type, fill = Subsistence)) +
-  geom_bar(position = "fill") +
-  scale_y_continuous(labels = percent) +
-  theme_minimal() +
-  labs(title = "Percentage of Subsistence Strategies Distributed by Context",
-       x = "Context Type",
-       y = "Percentage",
-       fill = "Subsistence Category") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-ggsave("figure/subsistence by context ratio.png", width = 14, height = 9, dpi = 300)
-
-######################## finger morphology
-
-finger_columns <- c("trimming", "long.nail", "surface.scraping", 
-                    "painting", "extraction", "accessories")
-
-# Pivot the data to a long format for ggplot
-df_long_finger <- nail1 %>%
-  select(Subsistence, all_of(finger_columns)) %>%
-  pivot_longer(cols = all_of(finger_columns), 
-               names_to = "Finger_Modification", 
-               values_to = "Presence") %>%
-  filter(Presence == 1)
-
-# Create a bar chart showing percentages of subsistence within each finger modification
-ggplot(df_long_finger, aes(x = Finger_Modification, fill = Subsistence)) +
-  geom_bar(position = "fill") +
-  scale_y_continuous(labels = percent) +
-  theme_minimal() +
-  labs(title = "Percentage of Subsistence Strategies by Finger Modification Type",
-       x = "Finger Modification Type",
-       y = "Percentage",
-       fill = "Subsistence Category") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-ggsave("figure/subsistence by morpology ratio.png", width = 14, height = 9, dpi = 300)
-
 ############ Environemntal factors
 
 df <- read.csv("./data/nail_geo.csv", fileEncoding="latin1")
@@ -254,133 +180,442 @@ df <- df %>%
     annual_temp < 0 ~ "Arctic/Alpine",
     TRUE ~ "Temperate"
   ))
-############## enviromental visualazation
-############ecological risk-context
-write.csv(df, "./data/nail_geo_env_levels.csv", fileEncoding="latin1")
-nail_data <- read.csv("./data/nail_geo_env_levels.csv")
-# Identify the context columns for reshaping
-context_columns <- c("general", "status.signaling", "ritual", 
-                     "ornamentation", "magic", "tooling", "punishment")
 
-# Pivot the data to a long format and filter for valid risk levels
-df_long <- nail_data %>%
-  filter(!is.na(risk_level)) %>%
-  select(risk_level, all_of(context_columns)) %>%
-  pivot_longer(cols = all_of(context_columns), 
-               names_to = "Context_Type", 
+
+##################################
+# ─────────────────────────────────────────────
+# COLOR-BLIND FRIENDLY PALETTE (Okabe-Ito)
+# ─────────────────────────────────────────────
+okabe_ito <- c(
+  "#E69F00", "#56B4E9", "#009E73",
+  "#F0E442", "#0072B2", "#D55E00", "#CC79A7"
+)
+
+# ─────────────────────────────────────────────
+# SHARED THEME
+# ─────────────────────────────────────────────
+shared_theme <- theme_minimal(base_size = 14) +
+  theme(
+    axis.text.x  = element_text(angle = 45, hjust = 1, size = 13),
+    axis.text.y  = element_text(size = 13),
+    axis.title   = element_text(size = 14),
+    legend.text  = element_text(size = 13),
+    legend.title = element_text(size = 14, face = "bold"),
+    plot.title   = element_text(size = 14, face = "bold")
+  )
+
+# ─────────────────────────────────────────────
+# CONTEXT COLUMNS  (punishment removed)
+# ─────────────────────────────────────────────
+context_columns <- c("general", "status.signaling", "ritual",
+                     "ornamentation", "magic", "tooling")
+
+finger_columns <- c("trimming", "long.nail", "surface.scraping",
+                    "painting", "extraction", "accessories")
+
+# ══════════════════════════════════════════════
+# ROW 1 — SUBSISTENCE
+# ══════════════════════════════════════════════
+
+# Plot a – subsistence by context (%)
+df_sub_ctx <- nail_data %>%
+  select(Subsistence, all_of(context_columns)) %>%
+  pivot_longer(cols = all_of(context_columns),
+               names_to  = "Context_Type",
                values_to = "Presence") %>%
   filter(Presence == 1) %>%
-  # Clean names for better display
-  mutate(Context_Type = str_to_title(gsub("\\.", " ", Context_Type)),
-         risk_level = factor(risk_level, levels = c("Low Risk", "Moderate Risk", "High Risk")))
-
-# Create a bar chart showing the percentage of risk levels within each context
-ggplot(df_long, aes(x = Context_Type, fill = risk_level)) +
-  geom_bar(position = "fill") +
-  scale_y_continuous(labels = scales::percent) +
-  scale_fill_viridis_d() +
-  theme_minimal() +
-  labs(title = "Percentage of Ecological Risk Levels by Cultural Context",
-       x = "Cultural Context",
-       y = "Percentage",
-       fill = "Risk Level") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
-# Save the plot
-ggsave("risk_level_by_context.png", width = 12, height = 8, dpi = 300)
-
-################# ecological zones-context
-# Pivot the data to a long format specifically for ecological zones
-df_long_eco <- nail_data %>%
-  filter(!is.na(ecological_zones)) %>%
-  select(ecological_zones, all_of(context_columns)) %>%
-  pivot_longer(cols = all_of(context_columns), 
-               names_to = "Context_Type", 
-               values_to = "Presence") %>%
-  filter(Presence == 1) %>%
-  # Standardize the labels for the visualization
   mutate(Context_Type = str_to_title(gsub("\\.", " ", Context_Type)))
 
-# Create the percentage bar chart
-ggplot(df_long_eco, aes(x = Context_Type, fill = ecological_zones)) +
+p1 <- ggplot(df_sub_ctx, aes(x = Context_Type, fill = Subsistence)) +
   geom_bar(position = "fill") +
-  scale_y_continuous(labels = scales::percent) +
-  scale_fill_brewer(palette = "Set3", name = "Ecological Zone") +
-  theme_minimal() +
-  labs(title = "Percentage of Ecological Zones by Cultural Context",
-       x = "Cultural Context",
-       y = "Percentage of Instances",
-       fill = "Ecological Zone") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  scale_y_continuous(labels = percent) +
+  scale_fill_manual(values = okabe_ito) +
+  shared_theme +
+  labs(title = "Subsistence by Context",
+       x = "Cultural Context", y = "Percentage", fill = "Subsistence")
 
-# Save the resulting figure
-ggsave("ecological_zones_by_context.png", width = 12, height = 8, dpi = 300)
-
-
-###### ecological zone by morphology
-finger_columns <- c("trimming", "long.nail", "surface.scraping", 
-                    "painting", "extraction", "accessories")
-
-# 3. Reshape the data to a long format
-# We select the ecological zones and the finger modification columns
-# Then we filter for cases where the modification is present (value equals 1)
-df_long_finger_eco <- nail_data %>%
-  select(ecological_zones, all_of(finger_columns)) %>%
-  pivot_longer(cols = all_of(finger_columns), 
-               names_to = "Finger_Modification", 
+# Plot b – subsistence by finger modification (%)
+df_sub_finger <- nail_data %>%
+  select(Subsistence, all_of(finger_columns)) %>%
+  pivot_longer(cols = all_of(finger_columns),
+               names_to  = "Finger_Modification",
                values_to = "Presence") %>%
   filter(Presence == 1) %>%
-  # Remove rows with missing ecological data to ensure a clean visualization
-  filter(!is.na(ecological_zones)) %>%
-  # Format the modification names for the plot labels
   mutate(Finger_Modification = str_to_title(gsub("\\.", " ", Finger_Modification)))
 
-# 4. Create the stacked bar chart showing percentages
-ggplot(df_long_finger_eco, aes(x = Finger_Modification, fill = ecological_zones)) +
+p2 <- ggplot(df_sub_finger, aes(x = Finger_Modification, fill = Subsistence)) +
   geom_bar(position = "fill") +
   scale_y_continuous(labels = percent) +
-  scale_fill_viridis_d(name = "Ecological Zone") +
-  theme_minimal() +
-  labs(title = "Percentage of Ecological Zones by Finger Modification Type",
-       x = "Finger Modification Type",
-       y = "Percentage of Observations",
-       fill = "Ecological Zone") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  scale_fill_manual(values = okabe_ito) +
+  shared_theme +
+  labs(title = "Subsistence by Modification",
+       x = "Finger Modification Type", y = "Percentage", fill = "Subsistence")
 
-# 5. Save the final figure to your working directory
-ggsave("eco_zones_by_morphology_ratio.png", width = 14, height = 9, dpi = 300)
+# ══════════════════════════════════════════════
+# ROW 2 — ECOLOGICAL ZONE
+# ══════════════════════════════════════════════
 
-#### risk level by morphology
-
-# 2. Define the columns for finger morphology
-finger_columns <- c("trimming", "long.nail", "surface.scraping", 
-                    "painting", "extraction", "accessories")
-
-# 3. Pivot the data to a long format for the risk level analysis
-df_long_finger_risk <- nail_data %>%
-  select(risk_level, all_of(finger_columns)) %>%
-  pivot_longer(cols = all_of(finger_columns), 
-               names_to = "Finger_Modification", 
+# Plot c – ecological zone by context (%)
+df_eco_ctx <- nail_data %>%
+  filter(!is.na(ecological_zones)) %>%
+  select(ecological_zones, all_of(context_columns)) %>%
+  pivot_longer(cols = all_of(context_columns),
+               names_to  = "Context_Type",
                values_to = "Presence") %>%
-  # Keep only instances where the modification is recorded as present
   filter(Presence == 1) %>%
-  # Filter out missing values for risk_level
-  filter(!is.na(risk_level)) %>%
-  # Standardize modification names for display and set the order for risk levels
-  mutate(Finger_Modification = str_to_title(gsub("\\.", " ", Finger_Modification)),
-         risk_level = factor(risk_level, levels = c("Low Risk", "Moderate Risk", "High Risk")))
+  mutate(Context_Type = str_to_title(gsub("\\.", " ", Context_Type)))
 
-# 4. Create the bar chart showing percentages of risk levels
-ggplot(df_long_finger_risk, aes(x = Finger_Modification, fill = risk_level)) +
+p3 <- ggplot(df_eco_ctx, aes(x = Context_Type, fill = ecological_zones)) +
   geom_bar(position = "fill") +
   scale_y_continuous(labels = percent) +
-  scale_fill_viridis_d(name = "Risk Level") +
-  theme_minimal() +
-  labs(title = "Percentage of Ecological Risk Levels by Finger Modification Type",
-       x = "Finger Modification Type",
-       y = "Percentage of Observations",
-       fill = "Risk Level") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  scale_fill_manual(values = okabe_ito, name = "Ecological Zone") +
+  shared_theme +
+  labs(title = "Ecological Zone by Context",
+       x = "Cultural Context", y = "Percentage", fill = "Ecological Zone")
 
-# 5. Save the final figure to your working directory
-ggsave("risk_level_by_morphology_ratio.png", width = 14, height = 9, dpi = 300)
+# Plot d – ecological zone by finger modification (%)
+df_eco_finger <- nail_data %>%
+  filter(!is.na(ecological_zones)) %>%
+  select(ecological_zones, all_of(finger_columns)) %>%
+  pivot_longer(cols = all_of(finger_columns),
+               names_to  = "Finger_Modification",
+               values_to = "Presence") %>%
+  filter(Presence == 1) %>%
+  mutate(Finger_Modification = str_to_title(gsub("\\.", " ", Finger_Modification)))
+
+p4 <- ggplot(df_eco_finger, aes(x = Finger_Modification, fill = ecological_zones)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = percent) +
+  scale_fill_manual(values = okabe_ito, name = "Ecological Zone") +
+  shared_theme +
+  labs(title = "Ecological Zone by Modification",
+       x = "Finger Modification Type", y = "Percentage", fill = "Ecological Zone")
+
+# ══════════════════════════════════════════════
+# ROW 3 — ECOLOGICAL RISK LEVEL
+# ══════════════════════════════════════════════
+
+# Plot e – risk level by context (%)
+df_risk_ctx <- nail_data %>%
+  filter(!is.na(risk_level)) %>%
+  select(risk_level, all_of(context_columns)) %>%
+  pivot_longer(cols = all_of(context_columns),
+               names_to  = "Context_Type",
+               values_to = "Presence") %>%
+  filter(Presence == 1) %>%
+  mutate(Context_Type = str_to_title(gsub("\\.", " ", Context_Type)),
+         risk_level = factor(risk_level,
+                             levels = c("Low Risk", "Moderate Risk", "High Risk")))
+
+p5 <- ggplot(df_risk_ctx, aes(x = Context_Type, fill = risk_level)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = percent) +
+  scale_fill_manual(values = okabe_ito, name = "Risk Level") +
+  shared_theme +
+  labs(title = "Ecological Risk by Context",
+       x = "Cultural Context", y = "Percentage", fill = "Risk Level")
+
+# Plot f – risk level by finger modification (%)
+df_risk_finger <- nail_data %>%
+  filter(!is.na(risk_level)) %>%
+  select(risk_level, all_of(finger_columns)) %>%
+  pivot_longer(cols = all_of(finger_columns),
+               names_to  = "Finger_Modification",
+               values_to = "Presence") %>%
+  filter(Presence == 1) %>%
+  mutate(Finger_Modification = str_to_title(gsub("\\.", " ", Finger_Modification)),
+         risk_level = factor(risk_level,
+                             levels = c("Low Risk", "Moderate Risk", "High Risk")))
+
+p6 <- ggplot(df_risk_finger, aes(x = Finger_Modification, fill = risk_level)) +
+  geom_bar(position = "fill") +
+  scale_y_continuous(labels = percent) +
+  scale_fill_manual(values = okabe_ito, name = "Risk Level") +
+  shared_theme +
+  labs(title = "Ecological Risk by Modification",
+       x = "Finger Modification Type", y = "Percentage", fill = "Risk Level")
+
+# ══════════════════════════════════════════════
+# PATCHWORK  –  2 columns × 3 rows
+# ══════════════════════════════════════════════
+
+combined_figure <- (p1 | p2) /
+  (p3 | p4) /
+  (p5 | p6) +
+  plot_annotation(
+    tag_levels = 'a',
+    theme      = theme(
+      plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+      plot.tag   = element_text(size = 16, face = "bold")
+    )
+  )
+
+ggsave("figure/combined_nail_figure.png",
+       plot   = combined_figure,
+       width  = 20,
+       height = 24,
+       dpi    = 300)
+
+
+##################################stats test###########
+library(rstatix)
+
+# ══════════════════════════════════════════════
+# HELPER FUNCTION
+# Runs chi-square; falls back to Fisher if any
+# expected cell count is below 5
+# ══════════════════════════════════════════════
+
+run_test <- function(data, group_var, label) {
+  tbl <- table(data[[group_var]], data[["fill_var"]])
+  expected <- chisq.test(tbl)$expected
+  cat("\n─────────────────────────────────────\n")
+  cat(label, "\n")
+  cat("─────────────────────────────────────\n")
+  if (any(expected < 5)) {
+    cat("Note: expected counts < 5 detected — using Fisher's exact test\n")
+    print(fisher.test(tbl, simulate.p.value = TRUE, B = 10000))
+  } else {
+    print(chisq.test(tbl))
+  }
+}
+
+# ══════════════════════════════════════════════
+# ROW 1 — SUBSISTENCE
+# ══════════════════════════════════════════════
+
+# a: subsistence by context
+df_sub_ctx_long <- nail_data %>%
+  select(Subsistence, all_of(context_columns)) %>%
+  pivot_longer(cols = all_of(context_columns),
+               names_to  = "fill_var",
+               values_to = "Presence") %>%
+  filter(Presence == 1) %>%
+  mutate(fill_var = str_to_title(gsub("\\.", " ", fill_var)))
+
+run_test(df_sub_ctx_long, group_var = "Subsistence",
+         label = "a: Subsistence by Context")
+
+# b: subsistence by finger modification
+df_sub_finger_long <- nail_data %>%
+  select(Subsistence, all_of(finger_columns)) %>%
+  pivot_longer(cols = all_of(finger_columns),
+               names_to  = "fill_var",
+               values_to = "Presence") %>%
+  filter(Presence == 1) %>%
+  mutate(fill_var = str_to_title(gsub("\\.", " ", fill_var)))
+
+run_test(df_sub_finger_long, group_var = "Subsistence",
+         label = "b: Subsistence by Finger Modification")
+
+# ══════════════════════════════════════════════
+# ROW 2 — ECOLOGICAL ZONE
+# ══════════════════════════════════════════════
+
+# c: ecological zone by context
+df_eco_ctx_long <- nail_data %>%
+  filter(!is.na(ecological_zones)) %>%
+  select(ecological_zones, all_of(context_columns)) %>%
+  pivot_longer(cols = all_of(context_columns),
+               names_to  = "fill_var",
+               values_to = "Presence") %>%
+  filter(Presence == 1) %>%
+  mutate(fill_var = str_to_title(gsub("\\.", " ", fill_var))) %>%
+  rename(Subsistence = ecological_zones)
+
+run_test(df_eco_ctx_long, group_var = "Subsistence",
+         label = "c: Ecological Zone by Context")
+
+# d: ecological zone by finger modification
+df_eco_finger_long <- nail_data %>%
+  filter(!is.na(ecological_zones)) %>%
+  select(ecological_zones, all_of(finger_columns)) %>%
+  pivot_longer(cols = all_of(finger_columns),
+               names_to  = "fill_var",
+               values_to = "Presence") %>%
+  filter(Presence == 1) %>%
+  mutate(fill_var = str_to_title(gsub("\\.", " ", fill_var))) %>%
+  rename(Subsistence = ecological_zones)
+
+run_test(df_eco_finger_long, group_var = "Subsistence",
+         label = "d: Ecological Zone by Finger Modification")
+
+# ══════════════════════════════════════════════
+# ROW 3 — ECOLOGICAL RISK LEVEL
+# ══════════════════════════════════════════════
+
+# e: risk level by context
+df_risk_ctx_long <- nail_data %>%
+  filter(!is.na(risk_level)) %>%
+  select(risk_level, all_of(context_columns)) %>%
+  pivot_longer(cols = all_of(context_columns),
+               names_to  = "fill_var",
+               values_to = "Presence") %>%
+  filter(Presence == 1) %>%
+  mutate(fill_var = str_to_title(gsub("\\.", " ", fill_var)),
+         risk_level = factor(risk_level,
+                             levels = c("Low Risk", "Moderate Risk", "High Risk"))) %>%
+  rename(Subsistence = risk_level)
+
+run_test(df_risk_ctx_long, group_var = "Subsistence",
+         label = "e: Ecological Risk by Context")
+
+# f: risk level by finger modification
+df_risk_finger_long <- nail_data %>%
+  filter(!is.na(risk_level)) %>%
+  select(risk_level, all_of(finger_columns)) %>%
+  pivot_longer(cols = all_of(finger_columns),
+               names_to  = "fill_var",
+               values_to = "Presence") %>%
+  filter(Presence == 1) %>%
+  mutate(fill_var = str_to_title(gsub("\\.", " ", fill_var)),
+         risk_level = factor(risk_level,
+                             levels = c("Low Risk", "Moderate Risk", "High Risk"))) %>%
+  rename(Subsistence = risk_level)
+
+run_test(df_risk_finger_long, group_var = "Subsistence",
+         label = "f: Ecological Risk by Finger Modification")
+
+
+###########################
+
+# ══════════════════════════════════════════════
+# HELPER FUNCTION
+# For one group level, counts how often each
+# context/modification is present, then tests
+# whether frequencies differ from equal distribution
+# ══════════════════════════════════════════════
+
+within_group_test <- function(data, group_var, type_columns, label) {
+  
+  cat("\n═══════════════════════════════════════════\n")
+  cat(label, "\n")
+  cat("═══════════════════════════════════════════\n")
+  
+  groups <- unique(data[[group_var]])
+  groups <- groups[!is.na(groups)]
+  
+  results <- map_dfr(groups, function(g) {
+    
+    subset_data <- data %>% filter(.data[[group_var]] == g)
+    n_cases     <- nrow(subset_data)
+    
+    # Count presence of each type
+    counts <- subset_data %>%
+      select(all_of(type_columns)) %>%
+      summarise(across(everything(), sum, na.rm = TRUE)) %>%
+      pivot_longer(everything(),
+                   names_to  = "Type",
+                   values_to = "Count") %>%
+      mutate(
+        Type       = str_to_title(gsub("\\.", " ", Type)),
+        Group      = g,
+        N_cases    = n_cases,
+        Proportion = Count / n_cases
+      )
+    
+    # Goodness-of-fit chi-square across all types within this group
+    # Null: all types equally likely
+    chi_result  <- chisq.test(counts$Count)
+    
+    # Binomial test per type: is this type's frequency
+    # different from the mean frequency across all types?
+    expected_p  <- mean(counts$Proportion)
+    
+    counts <- counts %>%
+      mutate(
+        Binomial_p = map_dbl(Count, ~ binom.test(.x, n_cases,
+                                                 p = expected_p,
+                                                 alternative = "two.sided")$p.value),
+        Binomial_p_adj = p.adjust(Binomial_p, method = "bonferroni"),
+        Significant    = ifelse(Binomial_p_adj < 0.05, "*", ""),
+        Chi_sq_overall = round(chi_result$statistic, 3),
+        Chi_sq_p       = round(chi_result$p.value, 4)
+      )
+    
+    counts
+  })
+  
+  # Print a clean summary table
+  results %>%
+    select(Group, Type, N_cases, Count, Proportion,
+           Binomial_p_adj, Significant,
+           Chi_sq_overall, Chi_sq_p) %>%
+    mutate(Proportion = round(Proportion, 3),
+           Binomial_p_adj = round(Binomial_p_adj, 4)) %>%
+    print(n = Inf)
+  
+  invisible(results)
+}
+
+# ══════════════════════════════════════════════
+# ROW 1 — SUBSISTENCE
+# ══════════════════════════════════════════════
+
+within_group_test(nail_data,
+                  group_var    = "Subsistence",
+                  type_columns = context_columns,
+                  label        = "a: Within each Subsistence group — Context frequency")
+
+within_group_test(nail_data,
+                  group_var    = "Subsistence",
+                  type_columns = finger_columns,
+                  label        = "b: Within each Subsistence group — Modification frequency")
+
+# ══════════════════════════════════════════════
+# ROW 2 — ECOLOGICAL ZONE
+# ══════════════════════════════════════════════
+
+within_group_test(nail_data %>% filter(!is.na(ecological_zones)),
+                  group_var    = "ecological_zones",
+                  type_columns = context_columns,
+                  label        = "c: Within each Ecological Zone — Context frequency")
+
+within_group_test(nail_data %>% filter(!is.na(ecological_zones)),
+                  group_var    = "ecological_zones",
+                  type_columns = finger_columns,
+                  label        = "d: Within each Ecological Zone — Modification frequency")
+
+# ══════════════════════════════════════════════
+# ROW 3 — RISK LEVEL
+# ══════════════════════════════════════════════
+
+nail_data <- nail_data %>%
+  mutate(risk_level = factor(risk_level,
+                             levels = c("Low Risk", "Moderate Risk", "High Risk")))
+
+within_group_test(nail_data %>% filter(!is.na(risk_level)),
+                  group_var    = "risk_level",
+                  type_columns = context_columns,
+                  label        = "e: Within each Risk Level — Context frequency")
+
+within_group_test(nail_data %>% filter(!is.na(risk_level)),
+                  group_var    = "risk_level",
+                  type_columns = finger_columns,
+                  label        = "f: Within each Risk Level — Modification frequency")
+
+
+library(openxlsx)
+
+export_analysis_results <- function(data, file_name = "Analysis_Results.xlsx") {
+  
+  # 1. Run the analysis and store each result in a named list
+  # The names given here will become the tab names in Excel
+  results_list <- list(
+    "Subsistence_Context"  = within_group_test(data, "Subsistence", context_columns, "A"),
+    "Subsistence_Mod"      = within_group_test(data, "Subsistence", finger_columns, "B"),
+    "Ecological_Context"   = within_group_test(data, "ecological_zones", context_columns, "C"),
+    "Ecological_Mod"       = within_group_test(data, "ecological_zones", finger_columns, "D"),
+    "Risk_Context"         = within_group_test(data, "risk_level", context_columns, "E"),
+    "Risk_Mod"             = within_group_test(data, "risk_level", finger_columns, "F")
+  )
+  
+  # 2. Export the list to a single Excel file
+  write.xlsx(results_list, file = file_name)
+  
+  message("Success: Results exported to ", file_name)
+}
+
+export_analysis_results(nail_data, "Archaeological_Stats_Results.xlsx")
+
+
