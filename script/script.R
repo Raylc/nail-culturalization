@@ -16,6 +16,9 @@ library(terra)
 library(scales)
 library(stringr)
 library(patchwork)
+library(openxlsx)
+library(rstatix)
+
 ## Load the data set
 nail <- read.csv("./data/nail.csv", fileEncoding="latin1")
 EAsocieties <- read.csv("./data/eHRAF coverage.csv", fileEncoding="latin1")
@@ -29,7 +32,7 @@ nail_all <-  nail_all %>% filter(Society != "Bedouin")
 nail_geo <- nail_all %>% distinct(Society, .keep_all = TRUE)
 nail_geo <- nail_geo %>%
   mutate(Society = if_else(str_detect(Society, "Abip"), "Abipón", Society))
-write.csv(nail_geo,"./data/nail_geo.csv", row.names = FALSE)
+#write.csv(nail_geo,"./data/nail_geo.csv", row.names = FALSE)
 
 
 ## counting subsistence type for mapping
@@ -180,9 +183,8 @@ df <- df %>%
     annual_temp < 0 ~ "Arctic/Alpine",
     TRUE ~ "Temperate"
   ))
+nail_data <- df
 
-
-##################################
 # ─────────────────────────────────────────────
 # COLOR-BLIND FRIENDLY PALETTE (Okabe-Ito)
 # ─────────────────────────────────────────────
@@ -192,16 +194,17 @@ okabe_ito <- c(
 )
 
 # ─────────────────────────────────────────────
-# SHARED THEME
+# SHARED THEME (Font sizes maximum scaling for legibility)
 # ─────────────────────────────────────────────
-shared_theme <- theme_minimal(base_size = 14) +
+shared_theme <- theme_minimal(base_size = 28) +
   theme(
-    axis.text.x  = element_text(angle = 45, hjust = 1, size = 13),
-    axis.text.y  = element_text(size = 13),
-    axis.title   = element_text(size = 14),
-    legend.text  = element_text(size = 13),
-    legend.title = element_text(size = 14, face = "bold"),
-    plot.title   = element_text(size = 14, face = "bold")
+    axis.text.x  = element_text(angle = 45, hjust = 1, size = 26, face = "bold"),
+    axis.text.y  = element_text(size = 22, face = "bold"),
+    axis.title   = element_text(size = 26, face = "bold"),
+    legend.text  = element_text(size = 26),
+    legend.title = element_text(size = 26, face = "bold"),
+    plot.title   = element_text(size = 26, face = "bold"),
+    panel.grid.major.x = element_blank()
   )
 
 # ─────────────────────────────────────────────
@@ -231,6 +234,7 @@ p1 <- ggplot(df_sub_ctx, aes(x = Context_Type, fill = Subsistence)) +
   scale_y_continuous(labels = percent) +
   scale_fill_manual(values = okabe_ito) +
   shared_theme +
+  theme(legend.position = "none") + 
   labs(title = "Subsistence by Context",
        x = "Cultural Context", y = "Percentage", fill = "Subsistence")
 
@@ -270,6 +274,7 @@ p3 <- ggplot(df_eco_ctx, aes(x = Context_Type, fill = ecological_zones)) +
   scale_y_continuous(labels = percent) +
   scale_fill_manual(values = okabe_ito, name = "Ecological Zone") +
   shared_theme +
+  theme(legend.position = "none") + 
   labs(title = "Ecological Zone by Context",
        x = "Cultural Context", y = "Percentage", fill = "Ecological Zone")
 
@@ -312,6 +317,7 @@ p5 <- ggplot(df_risk_ctx, aes(x = Context_Type, fill = risk_level)) +
   scale_y_continuous(labels = percent) +
   scale_fill_manual(values = okabe_ito, name = "Risk Level") +
   shared_theme +
+  theme(legend.position = "none") + 
   labs(title = "Ecological Risk by Context",
        x = "Cultural Context", y = "Percentage", fill = "Risk Level")
 
@@ -343,22 +349,20 @@ combined_figure <- (p1 | p2) /
   (p3 | p4) /
   (p5 | p6) +
   plot_annotation(
-    tag_levels = 'a',
+    tag_levels = 'A',
     theme      = theme(
-      plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
-      plot.tag   = element_text(size = 16, face = "bold")
+      plot.title = element_text(size = 30, face = "bold", hjust = 0.5),
+      plot.tag   = element_text(size = 30, face = "bold")
     )
   )
 
+# Expanded dimensions to prevent overlapping with large text
 ggsave("figure/combined_nail_figure.png",
-       plot   = combined_figure,
-       width  = 20,
-       height = 24,
-       dpi    = 300)
-
-
+       plot    = combined_figure,
+       width   = 24,
+       height  = 30,
+       dpi     = 600)
 ##################################stats test###########
-library(rstatix)
 
 # ══════════════════════════════════════════════
 # HELPER FUNCTION
@@ -383,7 +387,6 @@ run_test <- function(data, group_var, label) {
 # ══════════════════════════════════════════════
 # ROW 1 — SUBSISTENCE
 # ══════════════════════════════════════════════
-
 # a: subsistence by context
 df_sub_ctx_long <- nail_data %>%
   select(Subsistence, all_of(context_columns)) %>%
@@ -595,7 +598,6 @@ within_group_test(nail_data %>% filter(!is.na(risk_level)),
                   label        = "f: Within each Risk Level — Modification frequency")
 
 
-library(openxlsx)
 
 export_analysis_results <- function(data, file_name = "Analysis_Results.xlsx") {
   
