@@ -20,19 +20,19 @@ library(openxlsx)
 library(rstatix)
 
 ## Load the data set
-nail <- read.csv("./data/nail.csv", fileEncoding="latin1")
-EAsocieties <- read.csv("./data/eHRAF coverage.csv", fileEncoding="latin1")
-nail1 <- read.csv("./data/nail_transformed_v2.csv", fileEncoding="latin1")
+nail <- read.csv("data/nail.csv", fileEncoding="latin1")
+EAsocieties <- read.csv("data/eHRAF coverage.csv", fileEncoding="latin1")
+nail1 <- read.csv("data/nail_transformed_v2.csv", fileEncoding="latin1")
 
 ## Merge two data frames to extract coordinates
-nail_all <- left_join(nail1, EAsocieties, by = "Society")
+nail_all <- left_join(nail1, EAsocieties, by = "OWC_Code")
 ## Remove Bedouin because it does not have geographic coordinates
-nail_all <-  nail_all %>% filter(Society != "Bedouin")
+nail_all <-  nail_all %>% filter(Society.y != "Bedouin")
 # Remove duplicates based on Society
-nail_geo <- nail_all %>% distinct(Society, .keep_all = TRUE)
-nail_geo <- nail_geo %>%
-  mutate(Society = if_else(str_detect(Society, "Abip"), "Abipón", Society))
-#write.csv(nail_geo,"./data/nail_geo.csv", row.names = FALSE)
+nail_geo <- nail_all %>% distinct(Society.y, .keep_all = TRUE)
+# nail_geo <- nail_geo %>%
+#   mutate(Society = if_else(str_detect(Society, "Abip"), "Abipón", Society))
+write.csv(nail_geo,"data/nail_geo.csv", row.names = FALSE)
 
 
 ## counting subsistence type for mapping
@@ -184,6 +184,7 @@ df <- df %>%
     TRUE ~ "Temperate"
   ))
 nail_data <- df
+write.csv(nail_data,"data/nail_geo_env_levels.csv", row.names = FALSE)
 
 # ─────────────────────────────────────────────
 # COLOR-BLIND FRIENDLY PALETTE (Okabe-Ito)
@@ -621,3 +622,190 @@ export_analysis_results <- function(data, file_name = "Analysis_Results.xlsx") {
 export_analysis_results(nail_data, "Archaeological_Stats_Results.xlsx")
 
 
+
+###########bar plot############
+
+# Read the dataset
+df <- read.csv("data/nail_geo_env_levels.csv", stringsAsFactors = FALSE)
+n_total <- nrow(df)
+
+modification_vars <- c(
+  "trimming",
+  "long.nail",
+  "surface.scraping",
+  "painting",
+  "extraction",
+  "accessories"
+)
+
+context_vars <- c(
+  "general",
+  "status.signaling",
+  "ritual",
+  "ornamentation",
+  "magic",
+  "tooling",
+  "punishment"
+)
+
+# Summarize counts and percentages
+summary_df <- bind_rows(
+  tibble(variable = modification_vars, category = "Modification"),
+  tibble(variable = context_vars, category = "Context")
+) %>%
+  rowwise() %>%
+  mutate(
+    n = sum(df[[variable]], na.rm = TRUE),
+    pct = (n / n_total) * 100
+  ) %>%
+  ungroup()
+
+mod_df <- summary_df %>%
+  filter(category == "Modification") %>%
+  arrange(desc(pct), variable) %>%
+  mutate(variable = factor(variable, levels = rev(variable)))
+
+ctx_df <- summary_df %>%
+  filter(category == "Context") %>%
+  arrange(desc(pct), variable) %>%
+  mutate(variable = factor(variable, levels = rev(variable)))
+
+# Panel 1: Modification
+p_mod <- ggplot(mod_df, aes(x = variable, y = pct)) +
+  geom_col(fill = "#2C5E8A", width = 0.7) +
+  geom_text(aes(label = n), hjust = -0.25, size = 3.8) +
+  coord_flip() +
+  scale_y_continuous(
+    limits = c(0, max(mod_df$pct) * 1.15),
+    labels = function(x) paste0(x, "%")
+  ) +
+  labs(
+    title = "A. Modification",
+    x = NULL,
+    y = "Percentage of Cases (N = 91)"
+  ) +
+  theme_classic(base_size = 12) +
+  theme(plot.title = element_text(face = "bold"))
+
+# Panel 2: Context
+p_ctx <- ggplot(ctx_df, aes(x = variable, y = pct)) +
+  geom_col(fill = "#3B7A57", width = 0.7) +
+  geom_text(aes(label = n), hjust = -0.25, size = 3.8) +
+  coord_flip() +
+  scale_y_continuous(
+    limits = c(0, max(ctx_df$pct) * 1.15),
+    labels = function(x) paste0(x, "%")
+  ) +
+  labs(
+    title = "B. Context",
+    x = NULL,
+    y = "Percentage of Cases (N = 91)"
+  ) +
+  theme_classic(base_size = 12) +
+  theme(plot.title = element_text(face = "bold"))
+
+# Combine into one panel (stacked vertically; use `p_mod + p_ctx` for side-by-side)
+combined_plot <- p_mod / p_ctx
+
+print(combined_plot)
+
+# Optional: save to file
+ggsave("figure/nail_frequency_panels.png", combined_plot, width = 7, height = 8, dpi = 300)
+
+
+
+
+
+library(tidyverse)
+library(spaMM)
+
+# Prepare factors for predictors
+df <- df %>%
+  mutate(
+    ecological_zones = factor(ecological_zones),
+    risk_level = factor(risk_level),
+    Subsistence = factor(Subsistence)
+  )
+
+# Helper function to fit a spatial mixed effects logistic regression model
+# using a Matern correlation matrix over Lat + Long
+fit_spatial_logit <- function(data, outcome, predictors = c("ecological_zones", "risk_level", "Subsistence")) {
+  rhs <- paste(predictors, collapse = " + ")
+  fml <- as.formula(paste0(outcome, " ~ ", rhs, " + Matern(1 | Lat + Long)"))
+  
+  model_data <- data %>%
+    select(all_of(c(outcome, predictors, "Lat", "Long"))) %>%
+    drop_na()
+  
+  fitme(
+    formula = fml,
+    data = model_data,
+    family = binomial(link = "logit")
+  )
+}
+
+# ---------------------------------------------------------
+# 1. MODIFICATION MODELS (separated from context)
+# ---------------------------------------------------------
+mod_models <- lapply(modification_vars, function(v) {
+  message("Fitting modification model for: ", v)
+  fit_spatial_logit(df, outcome = v)
+})
+names(mod_models) <- modification_vars
+
+# Example: inspect long.nail model (directly addresses the tropical / long nail claim)
+summary(mod_models[["long.nail"]])
+
+# Extract fixed effects and Matern spatial parameters for all modification models
+mod_summaries <- lapply(names(mod_models), function(v) {
+  s <- summary(mod_models[[v]])
+  fe <- as.data.frame(s$beta_table)
+  fe$outcome <- v
+  fe$category <- "modification"
+  fe$term <- rownames(fe)
+  fe
+}) %>% bind_rows()
+
+# ---------------------------------------------------------
+# 2. CONTEXT MODELS (separated from modification)
+# ---------------------------------------------------------
+ctx_models <- lapply(context_vars, function(v) {
+  message("Fitting context model for: ", v)
+  fit_spatial_logit(df, outcome = v)
+})
+names(ctx_models) <- context_vars
+
+# Example: inspect tooling model
+summary(ctx_models[["tooling"]])
+
+# Extract fixed effects and Matern spatial parameters for all context models
+ctx_summaries <- lapply(names(ctx_models), function(v) {
+  s <- summary(ctx_models[[v]])
+  fe <- as.data.frame(s$beta_table)
+  fe$outcome <- v
+  fe$category <- "context"
+  fe$term <- rownames(fe)
+  fe
+}) %>% bind_rows()
+
+# Optional: compare a spatial model against a non-spatial GLM for a given outcome
+# (for instance, testing whether Matern spatial correlation improves fit for long.nail)
+mod_data_long <- df %>%
+  select(long.nail, ecological_zones, risk_level, Subsistence, Lat, Long) %>%
+  drop_na()
+
+m_spatial_long <- fitme(
+  long.nail ~ ecological_zones + risk_level + Subsistence + Matern(1 | Lat + Long),
+  data = mod_data_long,
+  family = binomial(link = "logit")
+)
+
+m_nonspatial_long <- fitme(
+  long.nail ~ ecological_zones + risk_level + Subsistence,
+  data = mod_data_long,
+  family = binomial(link = "logit")
+)
+
+# Likelihood ratio / AIC comparison
+AIC(m_nonspatial_long)
+AIC(m_spatial_long)

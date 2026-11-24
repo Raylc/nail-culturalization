@@ -1,0 +1,30 @@
+formula: accessories ~ Subsistence + temp_z + precip_z + Matern(1 | Long + 
+    Lat)
+Estimation of corrPars and lambda by ML (p_v approximation of logL).
+Estimation of fixed effects by ML (p_v approximation of logL).
+Estimation of lambda by 'outer' ML, maximizing logL.
+family: binomial( link = logit ) 
+ ------------ Fixed effects (beta) ------------
+                                           Estimate  Cond. SE    t-value
+(Intercept)                                  -52.05 1.084e+05 -4.804e-04
+SubsistenceHorticulturalists              -14036.43 1.794e+07 -7.826e-04
+SubsistenceHunter-gatherers               -13964.49 1.733e+07 -8.059e-04
+SubsistenceIntensive agriculturalists        -10.77 1.084e+05 -9.939e-05
+SubsistenceOther subsistence combinations -13842.67 1.628e+07 -8.505e-04
+SubsistencePastoralists                   -12091.70 2.740e+07 -4.413e-04
+SubsistencePrimarily hunter-gatherers     -14276.59 3.001e+07 -4.757e-04
+temp_z                                        60.62 4.435e+02  1.367e-01
+precip_z                                      10.55 4.162e+01  2.536e-01
+ --------------- Random effects ---------------
+Family: gaussian( link = identity ) 
+Distance(s): Earth 
+                   --- Correlation parameters:
+        1.nu        1.rho 
+0.5000000000 0.0006380006 
+           --- Variance parameters ('lambda'):
+lambda = var(u) for u ~ Gaussian; 
+   Long + Lat  :  666  
+# of obs: 88; # of groups: Long + Lat, 88 
+ ------------- Likelihood values  -------------
+                        logLik
+logL       (p_v(h)): -2.817197

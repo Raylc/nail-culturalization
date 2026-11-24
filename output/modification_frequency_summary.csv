@@ -1,0 +1,7 @@
+group,outcome,n_total,n_observed,n_documented,n_zero,n_missing,proportion_documented,percent_documented
+Modification,accessories,91,91,2,89,0,0.02197802197802198,2.197802197802198
+Modification,extraction,91,91,4,87,0,0.04395604395604396,4.395604395604396
+Modification,long.nail,91,91,27,64,0,0.2967032967032967,29.67032967032967
+Modification,painting,91,91,12,79,0,0.13186813186813187,13.186813186813188
+Modification,surface.scraping,91,91,3,88,0,0.03296703296703297,3.296703296703297
+Modification,trimming,91,91,52,39,0,0.5714285714285714,57.14285714285714

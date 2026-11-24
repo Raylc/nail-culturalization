@@ -1,4 +1,4 @@
-eHRAF.ID,Society,Lat,Long
+OWC_Code,Society,Lat,Long
 FE12,Akan,7,-1.5
 MP05,Amhara,12.5,37.75
 FO07,Azande,5.08,28.25
@@ -339,5 +339,4 @@ SM03,Xokleng,-28,-50
 SH06,Yahgan,-55.5,-69.5
 SQ18,Yanoama,2.48999,-62.8522
 AI04,Uyghur,42.7325,83.39707
-NT08,Chiricahua Apache,32,-109.5
 SF10,Chiriguano,-21.1621,-63.3935

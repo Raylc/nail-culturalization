@@ -1,0 +1,27 @@
+
+Call:
+glm(formula = nonspatial_formula, family = binomial(link = "logit"), 
+    data = analysis_data)
+
+Coefficients:
+                                            Estimate Std. Error z value Pr(>|z|)  
+(Intercept)                               -2.418e+00  1.228e+00  -1.970   0.0488 *
+SubsistenceHorticulturalists              -3.136e-01  1.450e+00  -0.216   0.8288  
+SubsistenceHunter-gatherers                4.176e-01  1.634e+00   0.256   0.7983  
+SubsistenceIntensive agriculturalists      2.131e-01  1.319e+00   0.162   0.8717  
+SubsistenceOther subsistence combinations  1.072e-04  1.501e+00   0.000   0.9999  
+SubsistencePastoralists                    1.581e+00  1.499e+00   1.055   0.2913  
+SubsistencePrimarily hunter-gatherers     -1.583e+01  1.739e+03  -0.009   0.9927  
+temp_z                                     1.400e+00  6.188e-01   2.263   0.0237 *
+precip_z                                  -5.028e-01  4.184e-01  -1.202   0.2294  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 70.102  on 87  degrees of freedom
+Residual deviance: 58.331  on 79  degrees of freedom
+AIC: 76.331
+
+Number of Fisher Scoring iterations: 16
+
