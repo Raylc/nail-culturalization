@@ -716,96 +716,538 @@ ggsave("figure/nail_frequency_panels.png", combined_plot, width = 7, height = 8,
 
 
 
-library(tidyverse)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 library(spaMM)
 
-# Prepare factors for predictors
-df <- df %>%
-  mutate(
-    ecological_zones = factor(ecological_zones),
-    risk_level = factor(risk_level),
-    Subsistence = factor(Subsistence)
-  )
+dat <- read.csv("data/nail_geo_env_levels.csv", stringsAsFactors = FALSE)
 
-# Helper function to fit a spatial mixed effects logistic regression model
-# using a Matern correlation matrix over Lat + Long
-fit_spatial_logit <- function(data, outcome, predictors = c("ecological_zones", "risk_level", "Subsistence")) {
-  rhs <- paste(predictors, collapse = " + ")
-  fml <- as.formula(paste0(outcome, " ~ ", rhs, " + Matern(1 | Lat + Long)"))
+mod_vars <- c(
+  "trimming",
+  "long.nail",
+  "surface.scraping",
+  "painting",
+  "extraction",
+  "accessories"
+)
+
+ctx_vars <- c(
+  "general",
+  "status.signaling",
+  "ritual",
+  "ornamentation",
+  "magic",
+  "tooling",
+  "punishment"
+)
+keep_mod <- mod_vars[sapply(dat[mod_vars], function(x) sum(x == 1, na.rm = TRUE) >= 3)]
+keep_ctx <- ctx_vars[sapply(dat[ctx_vars], function(x) sum(x == 1, na.rm = TRUE) >= 3)]
+outcome_vars <- c(keep_mod, keep_ctx)
+
+predictors <- c("Subsistence", "ecological_risk", "ecological_zones")
+
+dat_clean <- dat
+dat_clean$Subsistence <- factor(dat_clean$Subsistence)
+dat_clean$ecological_zones <- factor(dat_clean$ecological_zones)
+dat_clean$risk_scaled <- as.numeric(scale(dat_clean$ecological_risk))
+
+pred_col_map <- c(
+  Subsistence = "Subsistence",
+  ecological_risk = "risk_scaled",
+  ecological_zones = "ecological_zones"
+)
+
+# 2. Fit single predictor models and intercept-only null models
+pred_only_models <- list()
+null_only_models <- list()
+single_meta <- list()
+
+for (y_var in outcome_vars) {
+  for (p_name in predictors) {
+    p_col <- pred_col_map[[p_name]]
+    key <- paste(y_var, p_name, sep = "__")
+    
+    sub_dat <- dat_clean[
+      !is.na(dat_clean[[y_var]]) &
+        !is.na(dat_clean[[p_col]]),
+    ]
+    
+    if (nrow(sub_dat) < 5 || length(unique(sub_dat[[y_var]])) < 2) {
+      message("Skipping ", key, ": insufficient sample size or no outcome variation.")
+      next
+    }
+    
+    form_pred <- as.formula(paste(y_var, "~", p_col))
+    form_null <- as.formula(paste(y_var, "~ 1"))
+    
+    fit_pred <- tryCatch(
+      fitme(form_pred, data = sub_dat, family = binomial()),
+      error = function(e) {
+        message("Single predictor model failed for ", key, ": ", conditionMessage(e))
+        NULL
+      }
+    )
+    
+    fit_null <- tryCatch(
+      fitme(form_null, data = sub_dat, family = binomial()),
+      error = function(e) {
+        message("Null model failed for ", key, ": ", conditionMessage(e))
+        NULL
+      }
+    )
+    
+    if (!is.null(fit_pred) && !is.null(fit_null)) {
+      pred_only_models[[key]] <- fit_pred
+      null_only_models[[key]] <- fit_null
+      single_meta[[key]] <- data.frame(
+        key = key,
+        outcome = y_var,
+        predictor = p_name,
+        n = nrow(sub_dat),
+        n_ones = sum(sub_dat[[y_var]] == 1),
+        stringsAsFactors = FALSE
+      )
+    }
+  }
+}
+
+# 3. Extract single predictor results and p-values
+single_rows <- list()
+
+for (key in names(pred_only_models)) {
+  m_pr <- pred_only_models[[key]]
+  m_nu <- null_only_models[[key]]
+  meta <- single_meta[[key]]
   
-  model_data <- data %>%
-    select(all_of(c(outcome, predictors, "Lat", "Long"))) %>%
-    drop_na()
+  aic_obj <- tryCatch(AIC(m_pr, verbose = FALSE), error = function(e) NULL)
+  aic_val <- if (!is.null(aic_obj) && "mAIC" %in% names(aic_obj)) {
+    as.numeric(aic_obj[["mAIC"]])
+  } else if (!is.null(aic_obj) && length(aic_obj) >= 1) {
+    as.numeric(aic_obj[[1]])
+  } else {
+    NA_real_
+  }
   
-  fitme(
-    formula = fml,
-    data = model_data,
-    family = binomial(link = "logit")
+  lrt_obj <- tryCatch(anova(m_pr, m_nu), error = function(e) NULL)
+  lrt_stat <- NA_real_
+  lrt_p <- NA_real_
+  
+  if (!is.null(lrt_obj)) {
+    tab <- if (is.list(lrt_obj) && !is.data.frame(lrt_obj) && !is.null(lrt_obj$basicLRT)) {
+      as.data.frame(lrt_obj$basicLRT)
+    } else if (is.data.frame(lrt_obj) || is.matrix(lrt_obj)) {
+      as.data.frame(lrt_obj)
+    } else {
+      NULL
+    }
+    
+    if (!is.null(tab) && nrow(tab) > 0) {
+      cn <- colnames(tab)
+      p_col <- grep("p[-_.]?value|Pr\\(", cn, value = TRUE, ignore.case = TRUE)
+      s_col <- grep("chi|stat|LR|2\\*\\(d", cn, value = TRUE, ignore.case = TRUE)
+      
+      if (length(s_col) > 0) {
+        s_vals <- suppressWarnings(as.numeric(tab[[s_col[1]]]))
+        s_vals <- s_vals[!is.na(s_vals)]
+        if (length(s_vals) > 0) lrt_stat <- s_vals[length(s_vals)]
+      }
+      
+      if (length(p_col) > 0) {
+        p_vals <- suppressWarnings(as.numeric(tab[[p_col[1]]]))
+        p_vals <- p_vals[!is.na(p_vals)]
+        if (length(p_vals) > 0) lrt_p <- p_vals[length(p_vals)]
+      }
+    }
+  }
+  
+  single_rows[[key]] <- data.frame(
+    outcome = meta$outcome,
+    predictor = meta$predictor,
+    n = meta$n,
+    n_ones = meta$n_ones,
+    mAIC = aic_val,
+    pred_stat = lrt_stat,
+    pred_p = lrt_p,
+    stringsAsFactors = FALSE
   )
 }
 
-# ---------------------------------------------------------
-# 1. MODIFICATION MODELS (separated from context)
-# ---------------------------------------------------------
-mod_models <- lapply(modification_vars, function(v) {
-  message("Fitting modification model for: ", v)
-  fit_spatial_logit(df, outcome = v)
-})
-names(mod_models) <- modification_vars
+single_pred_table <- do.call(rbind, single_rows)
+rownames(single_pred_table) <- NULL
+single_pred_table$pred_p_fdr <- p.adjust(single_pred_table$pred_p, method = "fdr")
+print(single_pred_table)
 
-# Example: inspect long.nail model (directly addresses the tropical / long nail claim)
-summary(mod_models[["long.nail"]])
 
-# Extract fixed effects and Matern spatial parameters for all modification models
-mod_summaries <- lapply(names(mod_models), function(v) {
-  s <- summary(mod_models[[v]])
-  fe <- as.data.frame(s$beta_table)
-  fe$outcome <- v
-  fe$category <- "modification"
-  fe$term <- rownames(fe)
-  fe
-}) %>% bind_rows()
 
-# ---------------------------------------------------------
-# 2. CONTEXT MODELS (separated from modification)
-# ---------------------------------------------------------
-ctx_models <- lapply(context_vars, function(v) {
-  message("Fitting context model for: ", v)
-  fit_spatial_logit(df, outcome = v)
-})
-names(ctx_models) <- context_vars
+# 4. Fit spatial models with Matern random effect
+spatial_models <- list()
+spatial_meta <- list()
 
-# Example: inspect tooling model
-summary(ctx_models[["tooling"]])
+for (key in names(pred_only_models)) {
+  meta <- single_meta[[key]]
+  y_var <- meta$outcome
+  p_name <- meta$predictor
+  p_col <- pred_col_map[[p_name]]
+  
+  sub_dat <- dat_clean[
+    !is.na(dat_clean[[y_var]]) &
+      !is.na(dat_clean[[p_col]]) &
+      !is.na(dat_clean$Lat) &
+      !is.na(dat_clean$Long),
+  ]
+  
+  form_spatial <- as.formula(paste(y_var, "~", p_col, "+ Matern(1 | Long + Lat)"))
+  
+  fit_sp <- tryCatch(
+    fitme(form_spatial, data = sub_dat, family = binomial()),
+    error = function(e) {
+      message("Spatial model failed for ", key, ": ", conditionMessage(e))
+      NULL
+    }
+  )
+  
+  if (!is.null(fit_sp)) {
+    spatial_models[[key]] <- fit_sp
+    spatial_meta[[key]] <- meta
+  }
+}
 
-# Extract fixed effects and Matern spatial parameters for all context models
-ctx_summaries <- lapply(names(ctx_models), function(v) {
-  s <- summary(ctx_models[[v]])
-  fe <- as.data.frame(s$beta_table)
-  fe$outcome <- v
-  fe$category <- "context"
-  fe$term <- rownames(fe)
-  fe
-}) %>% bind_rows()
+# 5. Extract spatial model results and compare against single predictor models
+spatial_rows <- list()
 
-# Optional: compare a spatial model against a non-spatial GLM for a given outcome
-# (for instance, testing whether Matern spatial correlation improves fit for long.nail)
-mod_data_long <- df %>%
-  select(long.nail, ecological_zones, risk_level, Subsistence, Lat, Long) %>%
-  drop_na()
+for (key in names(spatial_models)) {
+  m_sp <- spatial_models[[key]]
+  m_pr <- pred_only_models[[key]]
+  meta <- spatial_meta[[key]]
+  
+  aic_sp_obj <- tryCatch(AIC(m_sp, verbose = FALSE), error = function(e) NULL)
+  caic_sp <- if (!is.null(aic_sp_obj) && "cAIC" %in% names(aic_sp_obj)) {
+    as.numeric(aic_sp_obj[["cAIC"]])
+  } else {
+    NA_real_
+  }
+  
+  lrt_obj <- tryCatch(anova(m_sp, m_pr), error = function(e) NULL)
+  sp_stat <- NA_real_
+  sp_p <- NA_real_
+  
+  if (!is.null(lrt_obj)) {
+    tab <- if (is.list(lrt_obj) && !is.data.frame(lrt_obj) && !is.null(lrt_obj$basicLRT)) {
+      as.data.frame(lrt_obj$basicLRT)
+    } else if (is.data.frame(lrt_obj) || is.matrix(lrt_obj)) {
+      as.data.frame(lrt_obj)
+    } else {
+      NULL
+    }
+    
+    if (!is.null(tab) && nrow(tab) > 0) {
+      cn <- colnames(tab)
+      p_col <- grep("p[-_.]?value|Pr\\(", cn, value = TRUE, ignore.case = TRUE)
+      s_col <- grep("chi|stat|LR|2\\*\\(d", cn, value = TRUE, ignore.case = TRUE)
+      
+      if (length(s_col) > 0) {
+        s_vals <- suppressWarnings(as.numeric(tab[[s_col[1]]]))
+        s_vals <- s_vals[!is.na(s_vals)]
+        if (length(s_vals) > 0) sp_stat <- s_vals[length(s_vals)]
+      }
+      
+      if (length(p_col) > 0) {
+        p_vals <- suppressWarnings(as.numeric(tab[[p_col[1]]]))
+        p_vals <- p_vals[!is.na(p_vals)]
+        if (length(p_vals) > 0) sp_p <- p_vals[length(p_vals)]
+      }
+    }
+  }
+  
+  spatial_rows[[key]] <- data.frame(
+    outcome = meta$outcome,
+    predictor = meta$predictor,
+    n = meta$n,
+    n_ones = meta$n_ones,
+    spatial_cAIC = caic_sp,
+    spatial_vs_pred_stat = sp_stat,
+    spatial_vs_pred_p = sp_p,
+    stringsAsFactors = FALSE
+  )
+}
 
-m_spatial_long <- fitme(
-  long.nail ~ ecological_zones + risk_level + Subsistence + Matern(1 | Lat + Long),
-  data = mod_data_long,
-  family = binomial(link = "logit")
+spatial_comp_table <- do.call(rbind, spatial_rows)
+rownames(spatial_comp_table) <- NULL
+spatial_comp_table$spatial_vs_pred_p_fdr <- p.adjust(spatial_comp_table$spatial_vs_pred_p, method = "fdr")
+print(spatial_comp_table)
+
+
+# Reporting chunk: extract AIC, likelihood ratio test statistics, and p-values
+extract_spamm_aic <- function(aic_obj, preferred = c("cAIC", "mAIC", "dAIC")) {
+  if (is.null(aic_obj)) return(NA_real_)
+  vals <- suppressWarnings(as.numeric(unlist(aic_obj)))
+  nm <- names(unlist(aic_obj))
+  if (!is.null(nm)) {
+    for (p in preferred) {
+      idx <- which(nm == p)
+      if (length(idx) > 0 && !is.na(vals[idx[1]])) {
+        return(vals[idx[1]])
+      }
+    }
+  }
+  vals <- vals[!is.na(vals)]
+  if (length(vals) > 0) return(vals[1])
+  NA_real_
+}
+
+extract_spamm_lrt <- function(lrt_obj) {
+  out <- c(stat = NA_real_, p = NA_real_)
+  if (is.null(lrt_obj)) return(out)
+  
+  tab <- NULL
+  if (is.list(lrt_obj) && !is.data.frame(lrt_obj)) {
+    for (slot_name in names(lrt_obj)) {
+      candidate <- lrt_obj[[slot_name]]
+      if (is.data.frame(candidate) || is.matrix(candidate)) {
+        cand_df <- as.data.frame(candidate)
+        cn <- colnames(cand_df)
+        if (any(grepl("p[-_.]?value|Pr\\(|chi|stat|LR|2\\*\\(d", cn, ignore.case = TRUE))) {
+          tab <- cand_df
+          break
+        }
+      }
+    }
+  } else if (is.data.frame(lrt_obj) || is.matrix(lrt_obj)) {
+    tab <- as.data.frame(lrt_obj)
+  }
+  
+  if (!is.null(tab) && nrow(tab) > 0) {
+    cn <- colnames(tab)
+    p_cols <- grep("p[-_.]?value|Pr\\(", cn, value = TRUE, ignore.case = TRUE)
+    s_cols <- grep("chi|stat|LR|2\\*\\(d", cn, value = TRUE, ignore.case = TRUE)
+    
+    if (length(s_cols) > 0) {
+      s_vals <- suppressWarnings(as.numeric(tab[[s_cols[1]]]))
+      s_vals <- s_vals[!is.na(s_vals)]
+      if (length(s_vals) > 0) out["stat"] <- s_vals[length(s_vals)]
+    }
+    
+    if (length(p_cols) > 0) {
+      p_vals <- suppressWarnings(as.numeric(tab[[p_cols[1]]]))
+      p_vals <- p_vals[!is.na(p_vals)]
+      if (length(p_vals) > 0) out["p"] <- p_vals[length(p_vals)]
+    }
+  }
+  out
+}
+
+report_rows <- list()
+
+for (key in names(spatial_models)) {
+  m_sp <- spatial_models[[key]]
+  m_pr <- pred_only_models[[key]]
+  meta <- spatial_meta[[key]]
+  
+  caic_sp <- extract_spamm_aic(
+    tryCatch(AIC(m_sp, verbose = FALSE), error = function(e) NULL),
+    preferred = c("cAIC", "mAIC", "dAIC")
+  )
+  maic_pr <- extract_spamm_aic(
+    tryCatch(AIC(m_pr, verbose = FALSE), error = function(e) NULL),
+    preferred = c("mAIC", "cAIC", "dAIC")
+  )
+  
+  lrt_obj <- tryCatch(anova(m_sp, m_pr), error = function(e) NULL)
+  lrt_res <- extract_spamm_lrt(lrt_obj)
+  
+  stat_val <- if (!is.na(lrt_res["stat"])) {
+    as.numeric(lrt_res["stat"])
+  } else if (exists("spatial_comp_table") && key %in% paste(spatial_comp_table$outcome, spatial_comp_table$predictor, sep = "__")) {
+    idx <- match(key, paste(spatial_comp_table$outcome, spatial_comp_table$predictor, sep = "__"))
+    as.numeric(spatial_comp_table$spatial_vs_pred_stat[idx])
+  } else {
+    NA_real_
+  }
+  
+  report_rows[[key]] <- data.frame(
+    outcome = meta$outcome,
+    predictor = meta$predictor,
+    n = meta$n,
+    n_ones = meta$n_ones,
+    pred_only_mAIC = round(maic_pr, 3),
+    spatial_cAIC = round(caic_sp, 3),
+    spatial_vs_pred_stat = round(stat_val, 4),
+    spatial_vs_pred_p = as.numeric(lrt_res["p"]),
+    stringsAsFactors = FALSE
+  )
+}
+
+reported_spatial_table <- do.call(rbind, report_rows)
+rownames(reported_spatial_table) <- NULL
+reported_spatial_table$spatial_vs_pred_p_fdr <- p.adjust(
+  reported_spatial_table$spatial_vs_pred_p,
+  method = "fdr"
 )
 
-m_nonspatial_long <- fitme(
-  long.nail ~ ecological_zones + risk_level + Subsistence,
-  data = mod_data_long,
-  family = binomial(link = "logit")
+print(reported_spatial_table)
+
+cat("\nTop 10 models where adding spatial structure improves fit most:\n")
+top_spatial <- reported_spatial_table[order(-reported_spatial_table$spatial_vs_pred_stat), ]
+print(head(top_spatial, 10), row.names = FALSE)
+
+reported_spatial_table$spatial_vs_pred_p <- pchisq(
+  reported_spatial_table$spatial_vs_pred_stat,
+  df = 3,
+  lower.tail = FALSE
 )
 
-# Likelihood ratio / AIC comparison
-AIC(m_nonspatial_long)
-AIC(m_spatial_long)
+reported_spatial_table$spatial_vs_pred_p_fdr <- p.adjust(
+  reported_spatial_table$spatial_vs_pred_p,
+  method = "fdr"
+)
+
+print(reported_spatial_table)
+
+
+
+
+# Pairs with unadjusted pred_p < 0.05 in single_pred_table
+target_keys <- c(
+  "tooling__Subsistence",
+  "ritual__Subsistence",
+  "long.nail__ecological_zones",
+  "extraction__ecological_risk",
+  "painting__ecological_risk"
+)
+
+extract_lrt_values <- function(lrt_obj) {
+  out <- c(chi2_LR = NA_real_, df = NA_real_, p_value = NA_real_)
+  if (is.null(lrt_obj)) return(out)
+  
+  tab <- NULL
+  if (is.list(lrt_obj) && !is.data.frame(lrt_obj)) {
+    for (nm in names(lrt_obj)) {
+      cand <- lrt_obj[[nm]]
+      if (is.data.frame(cand) || is.matrix(cand)) {
+        df_cand <- as.data.frame(cand)
+        if (any(grepl("p[-_.]?value|Pr\\(|chi2_LR|chi", colnames(df_cand), ignore.case = TRUE))) {
+          tab <- df_cand
+          break
+        }
+      }
+    }
+  } else if (is.data.frame(lrt_obj) || is.matrix(lrt_obj)) {
+    tab <- as.data.frame(lrt_obj)
+  }
+  
+  if (!is.null(tab) && nrow(tab) > 0) {
+    cn <- colnames(tab)
+    stat_col <- grep("chi2_LR|chi|stat|LR|2\\*\\(d", cn, value = TRUE, ignore.case = TRUE)
+    df_col <- grep("^df$|df", cn, value = TRUE, ignore.case = TRUE)
+    p_col <- grep("p[-_.]?value|Pr\\(", cn, value = TRUE, ignore.case = TRUE)
+    
+    if (length(stat_col) > 0) {
+      vals <- suppressWarnings(as.numeric(tab[[stat_col[1]]]))
+      vals <- vals[!is.na(vals)]
+      if (length(vals) > 0) out["chi2_LR"] <- vals[length(vals)]
+    }
+    if (length(df_col) > 0) {
+      vals <- suppressWarnings(as.numeric(tab[[df_col[1]]]))
+      vals <- vals[!is.na(vals)]
+      if (length(vals) > 0) out["df"] <- vals[length(vals)]
+    }
+    if (length(p_col) > 0) {
+      vals <- suppressWarnings(as.numeric(tab[[p_col[1]]]))
+      vals <- vals[!is.na(vals)]
+      if (length(vals) > 0) out["p_value"] <- vals[length(vals)]
+    }
+  }
+  out
+}
+
+sp_pred_test_rows <- list()
+
+for (key in target_keys) {
+  if (!key %in% names(spatial_models)) next
+  meta <- spatial_meta[[key]]
+  y_var <- meta$outcome
+  p_name <- meta$predictor
+  p_col <- pred_col_map[[p_name]]
+  
+  sub_dat <- dat_clean[
+    !is.na(dat_clean[[y_var]]) &
+      !is.na(dat_clean[[p_col]]) &
+      !is.na(dat_clean$Lat) &
+      !is.na(dat_clean$Long),
+  ]
+  
+  form_sp_null <- as.formula(paste(y_var, "~ 1 + Matern(1 | Long + Lat)"))
+  m_sp_null <- tryCatch(
+    fitme(form_sp_null, data = sub_dat, family = binomial()),
+    error = function(e) {
+      message("Spatial null model failed for ", key, ": ", conditionMessage(e))
+      NULL
+    }
+  )
+  
+  if (!is.null(m_sp_null)) {
+    lrt_res <- extract_lrt_values(tryCatch(anova(spatial_models[[key]], m_sp_null), error = function(e) NULL))
+    sp_pred_test_rows[[key]] <- data.frame(
+      outcome = y_var,
+      predictor = p_name,
+      n = nrow(sub_dat),
+      n_ones = sum(sub_dat[[y_var]] == 1),
+      chi2_LR = round(as.numeric(lrt_res["chi2_LR"]), 4),
+      df = as.numeric(lrt_res["df"]),
+      p_value_in_spatial = as.numeric(lrt_res["p_value"]),
+      stringsAsFactors = FALSE
+    )
+  }
+}
+
+sp_pred_test_table <- do.call(rbind, sp_pred_test_rows)
+rownames(sp_pred_test_table) <- NULL
+sp_pred_test_table$p_value_in_spatial_fdr <- p.adjust(
+  sp_pred_test_table$p_value_in_spatial,
+  method = "fdr"
+)
+print(sp_pred_test_table)
+
+
+
+report_single_pred_table <- single_pred_table %>%
+  arrange(pred_p_fdr, pred_p, desc(pred_stat)) %>%
+  mutate(
+    pred_stat = round(pred_stat, 4),
+    pred_p = signif(pred_p, 4),
+    pred_p_fdr = signif(pred_p_fdr, 4)
+  ) %>%
+  select(
+    Outcome = outcome,
+    Predictor = predictor,
+    n,
+    Documented = n_ones,
+    LR_Stat = pred_stat,
+    Unadjusted_p = pred_p,
+    Adjusted_p_FDR = pred_p_fdr
+  )
+
+print(report_single_pred_table, row.names = FALSE)
+write.csv(
+  report_single_pred_table,
+  file = "output/single_predictor_results_fdr.csv",
+  row.names = FALSE
+)
